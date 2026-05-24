@@ -263,7 +263,6 @@ async function writeGenerated(categories, papers, groups) {
     [
       `export const categories = ${JSON.stringify(categories, null, 2)}`,
       `export const papers = ${JSON.stringify(papers, null, 2)}`,
-      `export const generatedAt = ${JSON.stringify(new Date().toISOString())}`,
       '',
     ].join('\n'),
     'utf8',

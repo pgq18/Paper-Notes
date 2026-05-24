@@ -75,4 +75,3 @@ export const papers = [
     "file": "papers/foundation-models/attention-is-all-you-need.md"
   }
 ]
-export const generatedAt = "2026-05-24T20:55:27.962Z"
