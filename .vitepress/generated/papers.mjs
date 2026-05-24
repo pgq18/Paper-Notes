@@ -1,0 +1,78 @@
+export const categories = [
+  {
+    "id": "foundation-models",
+    "title": "Foundation Models",
+    "icon": "🏗️",
+    "description": "Architecture, pre-training, scaling laws, MoE, tokenizer, and long context."
+  },
+  {
+    "id": "alignment-safety",
+    "title": "Alignment & Safety",
+    "icon": "🛡️",
+    "description": "RLHF, DPO, RLAIF, constitutional AI, red teaming, and safety evaluation."
+  },
+  {
+    "id": "reasoning",
+    "title": "Reasoning",
+    "icon": "💡",
+    "description": "Chain-of-thought, math reasoning, code generation, planning, and test-time compute."
+  },
+  {
+    "id": "multimodal",
+    "title": "Multimodal",
+    "icon": "🖼️",
+    "description": "VLMs, image/video understanding, speech, and multimodal generation."
+  },
+  {
+    "id": "agents",
+    "title": "Agents",
+    "icon": "🤖",
+    "description": "Tool use, web agents, coding agents, planning, memory, and multi-agent systems."
+  },
+  {
+    "id": "rag-knowledge",
+    "title": "RAG & Knowledge",
+    "icon": "🔍",
+    "description": "Retrieval, vector search, knowledge graphs, grounding, and hallucination mitigation."
+  },
+  {
+    "id": "efficiency",
+    "title": "Efficiency",
+    "icon": "⚡",
+    "description": "Quantization, pruning, distillation, KV cache, LoRA, and speculative decoding."
+  },
+  {
+    "id": "evaluation",
+    "title": "Evaluation",
+    "icon": "📊",
+    "description": "Benchmarks, evaluation methodology, LLM-as-judge, and leaderboard analysis."
+  }
+]
+export const papers = [
+  {
+    "title": "Attention Is All You Need",
+    "shortTitle": "Transformer",
+    "year": 2017,
+    "date": "2026-05-25",
+    "category": "foundation-models",
+    "tags": [
+      "attention",
+      "sequence-modeling",
+      "transformer"
+    ],
+    "authors": [
+      "Ashish Vaswani",
+      "Noam Shazeer",
+      "Niki Parmar"
+    ],
+    "paper": "https://arxiv.org/abs/1706.03762",
+    "code": "",
+    "project": "",
+    "summary": "Introduces the Transformer architecture, replacing recurrence with self-attention for efficient sequence modeling.",
+    "status": "read",
+    "rating": 5,
+    "route": "/papers/foundation-models/attention-is-all-you-need",
+    "file": "papers/foundation-models/attention-is-all-you-need.md"
+  }
+]
+export const generatedAt = "2026-05-24T20:55:27.962Z"

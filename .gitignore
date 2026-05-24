@@ -1,4 +1,5 @@
 node_modules/
+.tools/
 .vitepress/cache/
 .vitepress/dist/
 .superpowers/
