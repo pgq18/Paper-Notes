@@ -7,8 +7,6 @@
   --vp-c-brand-2: #1d4ed8;
   --vp-c-brand-3: #1e40af;
   --vp-c-brand-soft: rgba(37, 99, 235, 0.14);
-  --vp-home-hero-name-color: transparent;
-  --vp-home-hero-name-background: linear-gradient(120deg, #2563eb, #059669);
 }
 
 .dark {
@@ -18,29 +16,12 @@
   --vp-c-brand-soft: rgba(96, 165, 250, 0.16);
 }
 
-.VPHero .name,
-.VPHero .text {
-  letter-spacing: 0;
-}
-
-.VPHero .tagline {
-  max-width: 680px;
-}
-
-.VPFeature {
-  border-radius: 8px;
-}
-
-.VPFeature .title {
-  letter-spacing: 0;
-}
-
 .vp-doc {
-  line-height: 1.78;
+  line-height: 1.72;
 }
 
 .vp-doc h1 {
-  font-size: 2rem;
+  font-size: 1.9rem;
   letter-spacing: 0;
 }
 
@@ -80,9 +61,7 @@
 
 .vp-doc blockquote {
   border-left: 3px solid var(--vp-c-brand-1);
-  border-radius: 0 8px 8px 0;
-  background: var(--vp-c-bg-soft);
-  padding: 0.7rem 1rem;
+  padding: 0.45rem 1rem;
 }
 
 .vp-doc mjx-container {

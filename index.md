@@ -1,52 +1,10 @@
----
-layout: home
+# Paper Notes
 
-hero:
-  name: "Paper Notes"
-  text: "Personal research paper library"
-  tagline: "用 Markdown 维护自己的论文精读、摘要和思考。"
-  actions:
-    - theme: brand
-      text: "Browse Papers"
-      link: "/papers/"
-    - theme: alt
-      text: "Tags"
-      link: "/tags/"
+用 Markdown 维护自己的论文笔记。这里保留精读摘要、方法拆解、实验结论和个人思考，方便之后快速查阅。
 
-features:
-  - icon: "🏗️"
-    title: "Foundation Models"
-    details: "Architecture, pre-training, scaling laws, MoE, tokenizer, and long context. 已收录 1 篇。"
-    link: "/papers/#foundation-models"
-  - icon: "🛡️"
-    title: "Alignment & Safety"
-    details: "RLHF, DPO, RLAIF, constitutional AI, red teaming, and safety evaluation. 已收录 0 篇。"
-    link: "/papers/#alignment-safety"
-  - icon: "💡"
-    title: "Reasoning"
-    details: "Chain-of-thought, math reasoning, code generation, planning, and test-time compute. 已收录 0 篇。"
-    link: "/papers/#reasoning"
-  - icon: "🖼️"
-    title: "Multimodal"
-    details: "VLMs, image/video understanding, speech, and multimodal generation. 已收录 0 篇。"
-    link: "/papers/#multimodal"
-  - icon: "🤖"
-    title: "Agents"
-    details: "Tool use, web agents, coding agents, planning, memory, and multi-agent systems. 已收录 0 篇。"
-    link: "/papers/#agents"
-  - icon: "🔍"
-    title: "RAG & Knowledge"
-    details: "Retrieval, vector search, knowledge graphs, grounding, and hallucination mitigation. 已收录 0 篇。"
-    link: "/papers/#rag-knowledge"
-  - icon: "⚡"
-    title: "Efficiency"
-    details: "Quantization, pruning, distillation, KV cache, LoRA, and speculative decoding. 已收录 0 篇。"
-    link: "/papers/#efficiency"
-  - icon: "📊"
-    title: "Evaluation"
-    details: "Benchmarks, evaluation methodology, LLM-as-judge, and leaderboard analysis. 已收录 0 篇。"
-    link: "/papers/#evaluation"
----
+- [论文索引](/papers/)
+- [标签索引](/tags/)
+- [笔记模板](/templates/paper)
 
 ## Recent Notes
 
@@ -54,8 +12,26 @@ features:
 | --- | --- | ---: | --- |
 | [Transformer](/papers/foundation-models/attention-is-all-you-need) | Foundation Models | 2017 | Introduces the Transformer architecture, replacing recurrence with self-attention for efficient sequence modeling. |
 
+## Categories
+
+| Category | Notes | Scope |
+| --- | ---: | --- |
+| [Foundation Models](/papers/#foundation-models) | 1 | Architecture, pre-training, scaling laws, MoE, tokenizer, and long context. |
+| [Alignment & Safety](/papers/#alignment-safety) | 0 | RLHF, DPO, RLAIF, constitutional AI, red teaming, and safety evaluation. |
+| [Reasoning](/papers/#reasoning) | 0 | Chain-of-thought, math reasoning, code generation, planning, and test-time compute. |
+| [Multimodal](/papers/#multimodal) | 0 | VLMs, image/video understanding, speech, and multimodal generation. |
+| [Agents](/papers/#agents) | 0 | Tool use, web agents, coding agents, planning, memory, and multi-agent systems. |
+| [RAG & Knowledge](/papers/#rag-knowledge) | 0 | Retrieval, vector search, knowledge graphs, grounding, and hallucination mitigation. |
+| [Efficiency](/papers/#efficiency) | 0 | Quantization, pruning, distillation, KV cache, LoRA, and speculative decoding. |
+| [Evaluation](/papers/#evaluation) | 0 | Benchmarks, evaluation methodology, LLM-as-judge, and leaderboard analysis. |
+
 ## Update Workflow
 
-- Use GitHub web editor to copy `templates/paper.md` into `papers/<category>/`.
-- Use local workflow with `npm run new-paper`, then write and push the generated Markdown file.
-- Run `npm run generate` before previewing or building so indexes stay current.
+本地新增：
+
+```bash
+npm run new-paper
+npm run generate
+```
+
+GitHub 网页新增：复制 `templates/paper.md` 到 `papers/<category>/`，填好 frontmatter 和正文后提交。

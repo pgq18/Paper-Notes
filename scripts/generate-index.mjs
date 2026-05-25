@@ -171,7 +171,7 @@ function buildSidebar(groups) {
         items: [
           { text: 'All Papers', link: '/papers/' },
           ...groups.map((group) => ({
-            text: `${group.icon || ''} ${group.title} (${group.papers.length})`.trim(),
+            text: `${group.title} (${group.papers.length})`,
             collapsed: group.papers.length > 4,
             items: group.papers.map((paper) => ({
               text: `${paper.shortTitle} (${paper.year})`,
@@ -197,19 +197,46 @@ function paperLink(paper) {
 }
 
 function writeHome(groups, papers) {
-  const features = groups.map((group) => [
-    `  - icon: ${JSON.stringify(group.icon || '📄')}`,
-    `    title: ${JSON.stringify(group.title)}`,
-    `    details: ${JSON.stringify(`${group.description} 已收录 ${group.papers.length} 篇。`)}`,
-    `    link: ${JSON.stringify(`/papers/#${group.id}`)}`,
-  ].join('\n')).join('\n')
-
   const recent = papers.slice(0, 8).map((paper) => {
     const category = groups.find((group) => group.id === paper.category)
     return `| ${paperLink(paper)} | ${category?.title || paper.category} | ${paper.year} | ${paper.summary} |`
   }).join('\n')
 
-  return `---\nlayout: home\n\nhero:\n  name: "Paper Notes"\n  text: "Personal research paper library"\n  tagline: "用 Markdown 维护自己的论文精读、摘要和思考。"\n  actions:\n    - theme: brand\n      text: "Browse Papers"\n      link: "/papers/"\n    - theme: alt\n      text: "Tags"\n      link: "/tags/"\n\nfeatures:\n${features}\n---\n\n## Recent Notes\n\n| Paper | Category | Year | Summary |\n| --- | --- | ---: | --- |\n${recent || '| No papers yet | - | - | Add your first note with `npm run new-paper`. |'}\n\n## Update Workflow\n\n- Use GitHub web editor to copy \`templates/paper.md\` into \`papers/<category>/\`.\n- Use local workflow with \`npm run new-paper\`, then write and push the generated Markdown file.\n- Run \`npm run generate\` before previewing or building so indexes stay current.\n`
+  const categories = groups.map((group) => {
+    return `| [${group.title}](/papers/#${group.id}) | ${group.papers.length} | ${group.description} |`
+  }).join('\n')
+
+  return `# Paper Notes
+
+用 Markdown 维护自己的论文笔记。这里保留精读摘要、方法拆解、实验结论和个人思考，方便之后快速查阅。
+
+- [论文索引](/papers/)
+- [标签索引](/tags/)
+- [笔记模板](/templates/paper)
+
+## Recent Notes
+
+| Paper | Category | Year | Summary |
+| --- | --- | ---: | --- |
+${recent || '| No papers yet | - | - | Add your first note with `npm run new-paper`. |'}
+
+## Categories
+
+| Category | Notes | Scope |
+| --- | ---: | --- |
+${categories}
+
+## Update Workflow
+
+本地新增：
+
+\`\`\`bash
+npm run new-paper
+npm run generate
+\`\`\`
+
+GitHub 网页新增：复制 \`templates/paper.md\` 到 \`papers/<category>/\`，填好 frontmatter 和正文后提交。
+`
 }
 
 function writePaperIndex(groups) {
@@ -219,7 +246,7 @@ function writePaperIndex(groups) {
       return `| ${paperLink(paper)} | ${paper.summary} | ${tags} | ${paper.year} |`
     }).join('\n') || '| No notes yet | - | - | - |'
 
-    return `## ${group.icon || ''} ${group.title} {#${group.id}}\n\n${group.description}\n\n| Paper | Summary | Tags | Year |\n| --- | --- | --- | ---: |\n${rows}\n`
+    return `## ${group.title} {#${group.id}}\n\n${group.description}\n\n| Paper | Summary | Tags | Year |\n| --- | --- | --- | ---: |\n${rows}\n`
   }).join('\n')
 
   return `# Paper Index\n\nThis page is generated from paper note frontmatter. Edit notes under \`papers/\`, then run \`npm run generate\`.\n\n${sections}`

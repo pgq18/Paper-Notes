@@ -8,7 +8,7 @@ export default {
           "link": "/papers/"
         },
         {
-          "text": "🏗️ Foundation Models (1)",
+          "text": "Foundation Models (1)",
           "collapsed": false,
           "items": [
             {
@@ -18,37 +18,37 @@ export default {
           ]
         },
         {
-          "text": "🛡️ Alignment & Safety (0)",
+          "text": "Alignment & Safety (0)",
           "collapsed": false,
           "items": []
         },
         {
-          "text": "💡 Reasoning (0)",
+          "text": "Reasoning (0)",
           "collapsed": false,
           "items": []
         },
         {
-          "text": "🖼️ Multimodal (0)",
+          "text": "Multimodal (0)",
           "collapsed": false,
           "items": []
         },
         {
-          "text": "🤖 Agents (0)",
+          "text": "Agents (0)",
           "collapsed": false,
           "items": []
         },
         {
-          "text": "🔍 RAG & Knowledge (0)",
+          "text": "RAG & Knowledge (0)",
           "collapsed": false,
           "items": []
         },
         {
-          "text": "⚡ Efficiency (0)",
+          "text": "Efficiency (0)",
           "collapsed": false,
           "items": []
         },
         {
-          "text": "📊 Evaluation (0)",
+          "text": "Evaluation (0)",
           "collapsed": false,
           "items": []
         }
