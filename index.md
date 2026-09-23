@@ -10,13 +10,13 @@
 
 | Paper | Category | Year | Summary |
 | --- | --- | ---: | --- |
-| No papers yet | - | - | Add your first note with `npm run new-paper`. |
+| [RL-100](/papers/rl-post-training/rl-100-2026) | RL Post-Training | 2026 | RL-100 将示范初始化、带离线评估门控的迭代离线 RL、在线 PPO 和一步蒸馏串成真实机器人训练流程，在限定任务协议下提高成功率与执行效率。 |
 
 ## Categories
 
 | Category | Notes | Scope |
 | --- | ---: | --- |
-| [RL Post-Training](/papers/#rl-post-training) | 0 | 围绕强化学习后训练的论文笔记与主题调研。 |
+| [RL Post-Training](/papers/#rl-post-training) | 1 | 围绕强化学习后训练的论文笔记与主题调研。 |
 
 ## Update Workflow
 
