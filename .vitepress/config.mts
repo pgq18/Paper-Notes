@@ -15,7 +15,7 @@ export default defineConfig({
   cleanUrls: true,
   lastUpdated: true,
   ignoreDeadLinks: true,
-  srcExclude: ['docs/superpowers/**'],
+  srcExclude: ['docs/superpowers/**', 'skills/**', '.tools/**', 'archive/**'],
 
   markdown: {
     math: true,
@@ -32,8 +32,8 @@ export default defineConfig({
     nav: [
       { text: '首页', link: '/' },
       { text: '论文索引', link: '/papers/' },
+      { text: 'RL Post-Training', link: '/papers/#rl-post-training' },
       { text: '标签', link: '/tags/' },
-      { text: '模板', link: '/templates/paper' },
     ],
 
     sidebar,

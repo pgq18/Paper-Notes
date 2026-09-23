@@ -1,0 +1,4 @@
+interface:
+  display_name: "论文精读与审阅"
+  short_description: "核实发表来源并生成十部分中文精读笔记，先供审阅再确认上传"
+  default_prompt: "使用 $paper-library-reader 阅读这篇论文，核实发表刊物或会议及最早公开时间，按十部分生成中文笔记，先展示完整文档并询问修改意见和是否上传。"

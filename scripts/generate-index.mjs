@@ -208,11 +208,11 @@ function writeHome(groups, papers) {
 
   return `# Paper Notes
 
-用 Markdown 维护自己的论文笔记。这里保留精读摘要、方法拆解、实验结论和个人思考，方便之后快速查阅。
+用 Markdown 维护自己的论文笔记和主题调研报告。这里保留精读摘要、方法拆解、实验结论、专题调研和个人思考，方便之后快速查阅。
 
 - [论文索引](/papers/)
+- [RL Post-Training](/papers/#rl-post-training)
 - [标签索引](/tags/)
-- [笔记模板](/templates/paper)
 
 ## Recent Notes
 
@@ -235,7 +235,7 @@ npm run new-paper
 npm run generate
 \`\`\`
 
-GitHub 网页新增：复制 \`templates/paper.md\` 到 \`papers/<category>/\`，填好 frontmatter 和正文后提交。
+论文笔记和相关主题调研均保存在 \`papers/rl-post-training/\`，分类填写 \`rl-post-training\`。填写标题、年份、标签、摘要和正文后运行 \`npm run generate\`。
 `
 }
 
