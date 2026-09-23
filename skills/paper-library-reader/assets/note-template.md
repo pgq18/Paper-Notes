@@ -1,4 +1,5 @@
 ---
+type: "paper"
 title: "论文正式标题"
 shortTitle: "论文简称"
 year: 2026

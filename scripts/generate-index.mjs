@@ -1,14 +1,9 @@
 import fs from 'node:fs/promises'
 import path from 'node:path'
-import { fileURLToPath } from 'node:url'
 import matter from 'gray-matter'
-import yaml from 'js-yaml'
+import { root, tracks, readCategories } from './library.mjs'
 
-const root = path.resolve(path.dirname(fileURLToPath(import.meta.url)), '..')
-const papersDir = path.join(root, 'papers')
-const categoriesPath = path.join(root, 'data', 'categories.yml')
 const generatedDir = path.join(root, '.vitepress', 'generated')
-
 const requiredFields = ['title', 'year', 'category', 'tags', 'summary']
 
 function toPosix(value) {
@@ -30,12 +25,11 @@ function normalizeDate(value) {
   return String(value).slice(0, 10)
 }
 
-function escapeHtml(value) {
+// Metadata is plain text, even inside Markdown links, headings and table cells.
+function escapeText(value) {
   return String(value)
-    .replaceAll('&', '&amp;')
-    .replaceAll('<', '&lt;')
-    .replaceAll('>', '&gt;')
-    .replaceAll('"', '&quot;')
+    .replace(/[&<>"'\\`*_\[\]{}|#!~$]/g, (character) => `&#${character.codePointAt(0)};`)
+    .replace(/[\r\n]+/g, ' ')
 }
 
 function slugifyTag(tag) {
@@ -43,58 +37,47 @@ function slugifyTag(tag) {
     .toLowerCase()
     .trim()
     .replace(/[^a-z0-9\u4e00-\u9fa5]+/g, '-')
-    .replace(/^-+|-+$/g, '')
+    .replace(/^-+|-+$/g, '') || 'tag'
 }
 
-async function readCategories() {
-  const raw = await fs.readFile(categoriesPath, 'utf8')
-  const categories = yaml.load(raw)
-  if (!Array.isArray(categories)) {
-    throw new Error('data/categories.yml must contain a YAML list')
+async function walkMarkdown(dir, isTrackRoot = true) {
+  let entries
+  try {
+    entries = await fs.readdir(dir, { withFileTypes: true })
+  } catch (error) {
+    if (error.code === 'ENOENT' && isTrackRoot) return []
+    throw error
   }
-
-  const seen = new Set()
-  for (const category of categories) {
-    if (!category || typeof category !== 'object') {
-      throw new Error('data/categories.yml contains a non-object category')
-    }
-    for (const field of ['id', 'title', 'description']) {
-      if (typeof category[field] !== 'string' || !category[field].trim()) {
-        throw new Error(`data/categories.yml: category missing string field "${field}"`)
-      }
-    }
-    if (seen.has(category.id)) {
-      throw new Error(`data/categories.yml: duplicate category id "${category.id}"`)
-    }
-    seen.add(category.id)
-  }
-
-  return categories
-}
-
-async function walkMarkdown(dir) {
-  const entries = await fs.readdir(dir, { withFileTypes: true })
   const files = []
   for (const entry of entries) {
     const fullPath = path.join(dir, entry.name)
     if (entry.isDirectory()) {
-      files.push(...await walkMarkdown(fullPath))
-    } else if (entry.isFile() && entry.name.endsWith('.md') && entry.name !== 'index.md') {
+      files.push(...await walkMarkdown(fullPath, false))
+    } else if (entry.isFile() && entry.name.endsWith('.md') && !(isTrackRoot && entry.name === 'index.md')) {
       files.push(fullPath)
     }
   }
-  return files
+  return files.sort()
 }
 
-function validatePaper(filePath, data, categoryIds) {
+function validateNote(filePath, data, track, categoryIds) {
+  const relative = toPosix(path.relative(path.join(root, track.directory), filePath))
+  const parts = relative.split('/')
+  if (parts.length !== 2 || !/^[a-z0-9\u4e00-\u9fa5]+(?:-[a-z0-9\u4e00-\u9fa5]+)*-\d{4}\.md$/.test(parts[1])) {
+    throw new Error(`${track.directory}/${relative}: expected ${track.directory}/<category>/<slug>-<year>.md`)
+  }
+
   for (const field of requiredFields) {
     assertField(data[field] !== undefined && data[field] !== null, filePath, field, 'field is required')
   }
 
   assertField(typeof data.title === 'string' && data.title.trim(), filePath, 'title', 'must be a non-empty string')
-  assertField(Number.isInteger(data.year), filePath, 'year', 'must be an integer')
+  assertField(Number.isInteger(data.year) && data.year >= 1000 && data.year <= 9999, filePath, 'year', 'must be a four-digit integer')
+  assertField(Number(parts[1].match(/-(\d{4})\.md$/)[1]) === data.year, filePath, 'year', 'must match the filename year')
   assertField(typeof data.category === 'string' && data.category.trim(), filePath, 'category', 'must be a non-empty string')
-  assertField(categoryIds.has(data.category), filePath, 'category', `unknown category "${data.category}"`)
+  assertField(categoryIds.has(data.category), filePath, 'category', `unknown category "${data.category}" in ${track.key}`)
+  assertField(data.category === parts[0], filePath, 'category', 'must match the parent directory')
+  assertField(data.type === undefined || data.type === track.type, filePath, 'type', `must be "${track.type}" for ${track.directory}/`)
   assertField(Array.isArray(data.tags) && data.tags.length > 0, filePath, 'tags', 'must be a non-empty string array')
   assertField(data.tags.every((tag) => typeof tag === 'string' && tag.trim()), filePath, 'tags', 'must be a non-empty string array')
   assertField(typeof data.summary === 'string' && data.summary.trim(), filePath, 'summary', 'must be a non-empty string')
@@ -108,16 +91,16 @@ function validatePaper(filePath, data, categoryIds) {
   }
 }
 
-async function readPapers(categories) {
+async function readNotes(track, categories) {
   const categoryIds = new Set(categories.map((category) => category.id))
-  const files = await walkMarkdown(papersDir)
+  const files = await walkMarkdown(path.join(root, track.directory))
   const routes = new Set()
-  const papers = []
+  const notes = []
 
   for (const filePath of files) {
     const source = await fs.readFile(filePath, 'utf8')
-    const parsed = matter(source)
-    validatePaper(filePath, parsed.data, categoryIds)
+    const { data } = matter(source)
+    validateNote(filePath, data, track, categoryIds)
 
     const relativeFile = toPosix(path.relative(root, filePath))
     const route = `/${relativeFile.replace(/\.md$/, '')}`
@@ -126,182 +109,181 @@ async function readPapers(categories) {
     }
     routes.add(route)
 
-    papers.push({
-      title: parsed.data.title.trim(),
-      shortTitle: typeof parsed.data.shortTitle === 'string' && parsed.data.shortTitle.trim()
-        ? parsed.data.shortTitle.trim()
-        : parsed.data.title.trim(),
-      year: parsed.data.year,
-      date: normalizeDate(parsed.data.date),
-      category: parsed.data.category,
-      tags: parsed.data.tags.map((tag) => tag.trim()).sort((a, b) => a.localeCompare(b)),
-      authors: Array.isArray(parsed.data.authors) ? parsed.data.authors.map((author) => author.trim()) : [],
-      paper: parsed.data.paper || '',
-      code: parsed.data.code || '',
-      project: parsed.data.project || '',
-      summary: parsed.data.summary.trim(),
-      status: parsed.data.status || '',
-      rating: parsed.data.rating || null,
+    notes.push({
+      type: track.type,
+      title: data.title.trim(),
+      shortTitle: typeof data.shortTitle === 'string' && data.shortTitle.trim()
+        ? data.shortTitle.trim()
+        : data.title.trim(),
+      year: data.year,
+      date: normalizeDate(data.date),
+      category: data.category,
+      tags: [...new Set(data.tags.map((tag) => tag.trim()))].sort((a, b) => a.localeCompare(b)),
+      authors: Array.isArray(data.authors) ? data.authors.map((author) => author.trim()) : [],
+      paper: data.paper || '',
+      code: data.code || '',
+      project: data.project || '',
+      summary: data.summary.trim(),
+      status: data.status || '',
+      rating: data.rating || null,
       route,
       file: relativeFile,
     })
   }
 
-  return papers.sort((a, b) => {
+  return notes.sort((a, b) => {
     const byDate = (b.date || '').localeCompare(a.date || '')
     if (byDate) return byDate
-    const byYear = b.year - a.year
-    if (byYear) return byYear
-    return a.title.localeCompare(b.title)
+    return b.year - a.year || a.title.localeCompare(b.title)
   })
 }
 
-function groupByCategory(papers, categories) {
+function groupByCategory(notes, categories) {
   return categories.map((category) => ({
     ...category,
-    papers: papers.filter((paper) => paper.category === category.id),
+    notes: notes.filter((note) => note.category === category.id),
   }))
 }
 
-function buildSidebar(groups) {
-  return {
-    '/papers/': [
-      {
-        text: 'Paper Library',
-        items: [
-          { text: 'All Papers', link: '/papers/' },
-          ...groups.map((group) => ({
-            text: `${group.title} (${group.papers.length})`,
-            collapsed: group.papers.length > 4,
-            items: group.papers.map((paper) => ({
-              text: `${paper.shortTitle} (${paper.year})`,
-              link: paper.route,
-            })),
+function buildSidebar(library) {
+  const sidebar = {}
+  for (const { track, groups } of library) {
+    sidebar[`/${track.directory}/`] = [{
+      text: track.label,
+      items: [
+        { text: `全部${track.label}`, link: `/${track.directory}/` },
+        ...groups.map((group) => ({
+          text: `${group.title} (${group.notes.length})`,
+          link: `/${track.directory}/#${group.id}`,
+          collapsed: group.notes.length > 4,
+          items: group.notes.map((note) => ({
+            text: `${note.shortTitle} (${note.year})`,
+            link: note.route,
           })),
-        ],
-      },
-    ],
-    '/tags/': [
-      {
-        text: 'Tags',
-        items: [
-          { text: 'Tag Index', link: '/tags/' },
-        ],
-      },
-    ],
+        })),
+      ],
+    }]
   }
+  sidebar['/tags/'] = [{
+    text: '标签索引',
+    items: [
+      { text: '全部标签', link: '/tags/' },
+      ...library.map(({ track }) => ({ text: track.label, link: `/${track.directory}/` })),
+    ],
+  }]
+  return sidebar
 }
 
-function paperLink(paper) {
-  return `[${paper.shortTitle}](${paper.route})`
+function noteLink(note) {
+  return `[${escapeText(note.shortTitle)}](${note.route})`
 }
 
-function writeHome(groups, papers) {
-  const recent = papers.slice(0, 8).map((paper) => {
-    const category = groups.find((group) => group.id === paper.category)
-    return `| ${paperLink(paper)} | ${category?.title || paper.category} | ${paper.year} | ${paper.summary} |`
-  }).join('\n')
+function writeHome(library) {
+  const entrances = library.map(({ track, notes }) => `- [${track.label}](/${track.directory}/)：${notes.length} 篇。${escapeText(track.description)}`).join('\n')
+  const sections = library.map(({ track, notes, groups }) => {
+    const recent = notes.slice(0, 5).map((note) => {
+      const category = groups.find((group) => group.id === note.category)
+      return `| ${noteLink(note)} | ${escapeText(category.title)} | ${note.year} | ${escapeText(note.summary)} |`
+    }).join('\n')
+    const categories = groups.map((group) => {
+      return `| [${escapeText(group.title)}](/${track.directory}/#${group.id}) | ${group.notes.length} | ${escapeText(group.description)} |`
+    }).join('\n')
+    return `## ${track.label}\n\n### 近期内容\n\n${recent
+      ? `| 标题 | 分类 | 年份 | 摘要 |\n| --- | --- | ---: | --- |\n${recent}`
+      : `这里将收录${track.label}，目前还没有内容。`}\n\n### 分类\n\n${categories
+      ? `| 分类 | 篇数 | 范围 |\n| --- | ---: | --- |\n${categories}`
+      : '尚未设置分类，可在收录第一篇内容时建立。'}`
+  }).join('\n\n')
 
-  const categories = groups.map((group) => {
-    return `| [${group.title}](/papers/#${group.id}) | ${group.papers.length} | ${group.description} |`
-  }).join('\n')
-
-  return `# Paper Notes
-
-用 Markdown 维护自己的论文笔记和主题调研报告。这里保留精读摘要、方法拆解、实验结论、专题调研和个人思考，方便之后快速查阅。
-
-- [论文索引](/papers/)
-- [RL Post-Training](/papers/#rl-post-training)
-- [标签索引](/tags/)
-
-## Recent Notes
-
-| Paper | Category | Year | Summary |
-| --- | --- | ---: | --- |
-${recent || '| No papers yet | - | - | Add your first note with `npm run new-paper`. |'}
-
-## Categories
-
-| Category | Notes | Scope |
-| --- | ---: | --- |
-${categories}
-
-## Update Workflow
-
-本地新增：
-
-\`\`\`bash
-npm run new-paper
-npm run generate
-\`\`\`
-
-论文笔记和相关主题调研均保存在 \`papers/rl-post-training/\`，分类填写 \`rl-post-training\`。填写标题、年份、标签、摘要和正文后运行 \`npm run generate\`。
-`
+  return `# Paper Notes\n\n个人研究文献库。论文笔记帮助理解单篇工作的研究逻辑，主题调研围绕一个问题串联多篇文献，两者分别归档与分类。\n\n${entrances}\n- [标签索引](/tags/)：按共同主题查阅两个轨道的内容。\n\n${sections}\n`
 }
 
-function writePaperIndex(groups) {
+function writeTrackIndex({ track, groups }) {
   const sections = groups.map((group) => {
-    const rows = group.papers.map((paper) => {
-      const tags = paper.tags.map((tag) => `\`${tag}\``).join(' ')
-      return `| ${paperLink(paper)} | ${paper.summary} | ${tags} | ${paper.year} |`
-    }).join('\n') || '| No notes yet | - | - | - |'
+    const rows = group.notes.map((note) => {
+      const tags = note.tags.map(escapeText).join('、')
+      return `| ${noteLink(note)} | ${escapeText(note.summary)} | ${tags} | ${note.year} |`
+    }).join('\n')
+    return `## ${escapeText(group.title)} {#${group.id}}\n\n${escapeText(group.description)}\n\n${rows
+      ? `| 标题 | 摘要 | 标签 | 年份 |\n| --- | --- | --- | ---: |\n${rows}`
+      : '该分类暂时没有内容。'}`
+  }).join('\n\n')
 
-    return `## ${group.title} {#${group.id}}\n\n${group.description}\n\n| Paper | Summary | Tags | Year |\n| --- | --- | --- | ---: |\n${rows}\n`
-  }).join('\n')
-
-  return `# Paper Index\n\nThis page is generated from paper note frontmatter. Edit notes under \`papers/\`, then run \`npm run generate\`.\n\n${sections}`
+  return `# ${track.label}\n\n${escapeText(track.description)}\n\n${sections || '目前还没有分类或内容，可在收录第一篇内容时建立分类。'}\n`
 }
 
-function writeTagIndex(papers) {
+function writeTagIndex(library) {
   const tags = new Map()
-  for (const paper of papers) {
-    for (const tag of paper.tags) {
-      if (!tags.has(tag)) tags.set(tag, [])
-      tags.get(tag).push(paper)
+  for (const { notes } of library) {
+    for (const note of notes) {
+      for (const tag of note.tags) {
+        if (!tags.has(tag)) tags.set(tag, [])
+        tags.get(tag).push(note)
+      }
     }
   }
 
+  const usedIds = new Set()
   const sections = [...tags.entries()]
     .sort(([a], [b]) => a.localeCompare(b))
-    .map(([tag, taggedPapers]) => {
-      const rows = taggedPapers
-        .sort((a, b) => b.year - a.year || a.title.localeCompare(b.title))
-        .map((paper) => `- ${paperLink(paper)} (${paper.year}) - ${paper.summary}`)
-        .join('\n')
-      return `## ${escapeHtml(tag)} {#${slugifyTag(tag)}}\n\n${rows}`
+    .map(([tag, taggedNotes]) => {
+      const baseId = slugifyTag(tag)
+      let id = baseId
+      let suffix = 2
+      while (usedIds.has(id)) id = `${baseId}-${suffix++}`
+      usedIds.add(id)
+      const groups = library.map(({ track }) => {
+        const notes = taggedNotes.filter((note) => note.type === track.type)
+        if (!notes.length) return ''
+        const rows = notes
+          .sort((a, b) => b.year - a.year || a.title.localeCompare(b.title))
+          .map((note) => `- ${noteLink(note)} (${note.year})：${escapeText(note.summary)}`)
+          .join('\n')
+        return `### ${track.label}\n\n${rows}`
+      }).filter(Boolean).join('\n\n')
+      return `## ${escapeText(tag)} {#${id}}\n\n${groups}`
     })
     .join('\n\n')
 
-  return `# Tag Index\n\nTags are generated from paper note frontmatter.\n\n${sections || 'No tags yet.'}\n`
+  return `# 标签索引\n\n同一标签下的内容按论文笔记与主题调研分别列出。\n\n${sections || '目前还没有标签。'}\n`
 }
 
-async function writeGenerated(categories, papers, groups) {
+async function writeGenerated(categories, library) {
   await fs.mkdir(generatedDir, { recursive: true })
   await fs.mkdir(path.join(root, 'tags'), { recursive: true })
+  for (const { track } of library) {
+    await fs.mkdir(path.join(root, track.directory), { recursive: true })
+  }
 
-  const sidebar = buildSidebar(groups)
   await fs.writeFile(
     path.join(generatedDir, 'sidebar.mjs'),
-    `export default ${JSON.stringify(sidebar, null, 2)}\n`,
+    `export default ${JSON.stringify(buildSidebar(library), null, 2)}\n`,
     'utf8',
   )
   await fs.writeFile(
     path.join(generatedDir, 'papers.mjs'),
     [
-      `export const categories = ${JSON.stringify(categories, null, 2)}`,
-      `export const papers = ${JSON.stringify(papers, null, 2)}`,
+      `export const categories = ${JSON.stringify(categories.papers, null, 2)}`,
+      `export const papers = ${JSON.stringify(library.find(({ track }) => track.key === 'papers').notes, null, 2)}`,
+      `export const researchCategories = ${JSON.stringify(categories.research, null, 2)}`,
+      `export const research = ${JSON.stringify(library.find(({ track }) => track.key === 'research').notes, null, 2)}`,
       '',
     ].join('\n'),
     'utf8',
   )
-  await fs.writeFile(path.join(root, 'index.md'), writeHome(groups, papers), 'utf8')
-  await fs.writeFile(path.join(papersDir, 'index.md'), writePaperIndex(groups), 'utf8')
-  await fs.writeFile(path.join(root, 'tags', 'index.md'), writeTagIndex(papers), 'utf8')
+  await fs.writeFile(path.join(root, 'index.md'), writeHome(library), 'utf8')
+  for (const entry of library) {
+    await fs.writeFile(path.join(root, entry.track.directory, 'index.md'), writeTrackIndex(entry), 'utf8')
+  }
+  await fs.writeFile(path.join(root, 'tags', 'index.md'), writeTagIndex(library), 'utf8')
 }
 
 const categories = await readCategories()
-const papers = await readPapers(categories)
-const groups = groupByCategory(papers, categories)
-await writeGenerated(categories, papers, groups)
+const library = []
+for (const track of tracks) {
+  const notes = await readNotes(track, categories[track.key])
+  library.push({ track, notes, groups: groupByCategory(notes, categories[track.key]) })
+}
+await writeGenerated(categories, library)
 
-console.log(`Generated indexes for ${papers.length} paper(s) across ${categories.length} categories.`)
+console.log(library.map(({ track, notes, groups }) => `Generated ${notes.length} ${track.type} note(s) across ${groups.length} categories.`).join('\n'))

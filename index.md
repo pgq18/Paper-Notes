@@ -1,30 +1,29 @@
 # Paper Notes
 
-用 Markdown 维护自己的论文笔记和主题调研报告。这里保留精读摘要、方法拆解、实验结论、专题调研和个人思考，方便之后快速查阅。
+个人研究文献库。论文笔记帮助理解单篇工作的研究逻辑，主题调研围绕一个问题串联多篇文献，两者分别归档与分类。
 
-- [论文索引](/papers/)
-- [RL Post-Training](/papers/#rl-post-training)
-- [标签索引](/tags/)
+- [论文笔记](/papers/)：0 篇。围绕单篇论文理解研究问题、方法和实验。
+- [主题调研](/research/)：0 篇。围绕一个研究问题综合多篇文献，梳理路线、证据和未解问题。
+- [标签索引](/tags/)：按共同主题查阅两个轨道的内容。
 
-## Recent Notes
+## 论文笔记
 
-| Paper | Category | Year | Summary |
-| --- | --- | ---: | --- |
-| No papers yet | - | - | Add your first note with `npm run new-paper`. |
+### 近期内容
 
-## Categories
+这里将收录论文笔记，目前还没有内容。
 
-| Category | Notes | Scope |
+### 分类
+
+| 分类 | 篇数 | 范围 |
 | --- | ---: | --- |
-| [RL Post-Training](/papers/#rl-post-training) | 0 | 围绕强化学习后训练的论文笔记与主题调研。 |
+| [RL Post-Training](/papers/#rl-post-training) | 0 | 围绕强化学习后训练的论文精读与方法分析。 |
 
-## Update Workflow
+## 主题调研
 
-本地新增：
+### 近期内容
 
-```bash
-npm run new-paper
-npm run generate
-```
+这里将收录主题调研，目前还没有内容。
 
-论文笔记和相关主题调研均保存在 `papers/rl-post-training/`，分类填写 `rl-post-training`。填写标题、年份、标签、摘要和正文后运行 `npm run generate`。
+### 分类
+
+尚未设置分类，可在收录第一篇内容时建立。

@@ -1,11 +1,9 @@
-# Paper Index
+# 论文笔记
 
-This page is generated from paper note frontmatter. Edit notes under `papers/`, then run `npm run generate`.
+围绕单篇论文理解研究问题、方法和实验。
 
 ## RL Post-Training {#rl-post-training}
 
-围绕强化学习后训练的论文笔记与主题调研。
+围绕强化学习后训练的论文精读与方法分析。
 
-| Paper | Summary | Tags | Year |
-| --- | --- | --- | ---: |
-| No notes yet | - | - | - |
+该分类暂时没有内容。

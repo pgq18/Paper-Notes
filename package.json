@@ -6,6 +6,9 @@
   "scripts": {
     "generate": "node scripts/generate-index.mjs",
     "new-paper": "node scripts/new-paper.mjs",
+    "new-research": "node scripts/new-paper.mjs --type research",
+    "new-category": "node scripts/new-category.mjs",
+    "test": "node --test scripts/library.test.mjs",
     "docs:dev": "npm run generate && vitepress dev --host 127.0.0.1",
     "docs:build": "npm run generate && vitepress build",
     "docs:preview": "vitepress preview --host 127.0.0.1"

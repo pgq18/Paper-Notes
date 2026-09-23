@@ -1,5 +1,5 @@
-# Tag Index
+# 标签索引
 
-Tags are generated from paper note frontmatter.
+同一标签下的内容按论文笔记与主题调研分别列出。
 
-No tags yet.
+目前还没有标签。

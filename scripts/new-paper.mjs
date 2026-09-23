@@ -2,12 +2,12 @@ import fs from 'node:fs/promises'
 import path from 'node:path'
 import readline from 'node:readline/promises'
 import { env, stdin as input, stdout as output } from 'node:process'
-import { fileURLToPath } from 'node:url'
+import { parseArgs } from 'node:util'
 import yaml from 'js-yaml'
+import { root, getTrack, readCategories } from './library.mjs'
 
-const root = path.resolve(path.dirname(fileURLToPath(import.meta.url)), '..')
-const categoriesPath = path.join(root, 'data', 'categories.yml')
-const papersDir = path.join(root, 'papers')
+const { values } = parseArgs({ options: { type: { type: 'string', default: 'paper' } } })
+const track = getTrack(values.type)
 
 function slugify(value) {
   return value
@@ -36,15 +36,6 @@ function todayLocalDate() {
   }).formatToParts(new Date())
   const values = Object.fromEntries(parts.map((part) => [part.type, part.value]))
   return `${values.year}-${values.month}-${values.day}`
-}
-
-async function readCategories() {
-  const raw = await fs.readFile(categoriesPath, 'utf8')
-  const categories = yaml.load(raw)
-  if (!Array.isArray(categories) || categories.length === 0) {
-    throw new Error('data/categories.yml must contain at least one category')
-  }
-  return categories
 }
 
 async function readPipedLines() {
@@ -91,8 +82,8 @@ async function chooseCategory(prompter, categories) {
   })
 
   const answer = await ask(prompter, 'Category id or number', categories[0].id)
-  const byNumber = Number.parseInt(answer, 10)
-  if (Number.isInteger(byNumber) && byNumber >= 1 && byNumber <= categories.length) {
+  const byNumber = Number(answer)
+  if (/^\d+$/.test(answer) && Number.isInteger(byNumber) && byNumber >= 1 && byNumber <= categories.length) {
     return categories[byNumber - 1].id
   }
 
@@ -110,10 +101,16 @@ function buildMarkdown(frontmatter) {
     sortKeys: false,
   }).trim()
 
-  return `---\n${yamlText}\n---\n\n# ${frontmatter.title}\n\n## One-Sentence Summary\n\n${frontmatter.summary}\n\n## Problem And Motivation\n\n\n\n## Core Method\n\n\n\n## Experiments\n\n\n\n## Limitations\n\n\n\n## Personal Notes\n\n\n\n## References\n\n- \n`
+  const sections = track.type === 'research'
+    ? ['调研问题与范围', '主要研究路线', '关键证据与比较', '结论与未解问题', '参考文献']
+    : ['研究问题与动机', '核心方法', '实验与结论', '局限与个人思考', '参考文献']
+  return `---\n${yamlText}\n---\n\n# ${frontmatter.title}\n\n${frontmatter.summary}\n\n${sections.map((section) => `## ${section}\n\n`).join('\n')}`
 }
 
-const categories = await readCategories()
+const categories = (await readCategories())[track.key]
+if (categories.length === 0) {
+  throw new Error(`${track.label} has no categories yet. Create one with npm run new-category -- --type ${track.type} --id <id> --title <title> --description <scope>`)
+}
 const prompter = await createPrompter()
 
 try {
@@ -122,23 +119,26 @@ try {
   if (!title) throw new Error('Title is required')
 
   const shortTitle = await ask(prompter, 'Short title', title)
-  const yearText = await ask(prompter, 'Year', String(new Date().getFullYear()))
-  const year = Number.parseInt(yearText, 10)
-  if (!Number.isInteger(year)) throw new Error('Year must be an integer')
+  const yearText = await ask(prompter, track.type === 'research' ? 'Report year' : 'Publication year', today.slice(0, 4))
+  const year = Number(yearText)
+  if (!/^\d{4}$/.test(yearText) || !Number.isInteger(year) || year < 1000) throw new Error('Year must be a four-digit integer')
 
   const category = await chooseCategory(prompter, categories)
   const tags = splitTags(await ask(prompter, 'Tags, comma-separated'))
   if (tags.length === 0) throw new Error('At least one tag is required')
 
-  const paper = await ask(prompter, 'Paper URL')
-  const code = await ask(prompter, 'Code URL')
-  const project = await ask(prompter, 'Project URL')
+  const sourceFields = track.type === 'paper' ? {
+    authors: [],
+    paper: await ask(prompter, 'Paper URL'),
+    code: await ask(prompter, 'Code URL'),
+    project: await ask(prompter, 'Project URL'),
+  } : {}
   const summary = await ask(prompter, 'One-sentence summary')
   if (!summary) throw new Error('Summary is required')
 
-  const status = await ask(prompter, 'Status', 'read')
+  const status = await ask(prompter, 'Status', track.type === 'research' ? 'draft' : 'read')
   const ratingText = await ask(prompter, 'Rating 1-5')
-  const rating = ratingText ? Number.parseInt(ratingText, 10) : undefined
+  const rating = ratingText ? Number(ratingText) : undefined
   if (rating !== undefined && (!Number.isInteger(rating) || rating < 1 || rating > 5)) {
     throw new Error('Rating must be an integer from 1 to 5')
   }
@@ -147,22 +147,20 @@ try {
   if (!slug) throw new Error('Could not create a file slug from the title')
 
   const frontmatter = {
+    type: track.type,
     title,
     shortTitle,
     year,
     date: today,
     category,
     tags,
-    authors: [],
-    paper,
-    code,
-    project,
+    ...sourceFields,
     summary,
     status,
   }
   if (rating !== undefined) frontmatter.rating = rating
 
-  const categoryDir = path.join(papersDir, category)
+  const categoryDir = path.join(root, track.directory, category)
   const filePath = path.join(categoryDir, `${slug}-${year}.md`)
 
   await fs.mkdir(categoryDir, { recursive: true })

@@ -3,7 +3,9 @@ export const categories = [
     "id": "rl-post-training",
     "title": "RL Post-Training",
     "icon": "🎯",
-    "description": "围绕强化学习后训练的论文笔记与主题调研。"
+    "description": "围绕强化学习后训练的论文精读与方法分析。"
   }
 ]
 export const papers = []
+export const researchCategories = []
+export const research = []

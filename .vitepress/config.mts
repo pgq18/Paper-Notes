@@ -9,7 +9,7 @@ const socialLinks = repository
 
 export default defineConfig({
   title: 'Paper Notes',
-  description: 'A personal research paper notes library',
+  description: '分别归档论文笔记与主题调研的个人研究文献库',
   lang: 'zh-CN',
   base,
   cleanUrls: true,
@@ -31,8 +31,8 @@ export default defineConfig({
 
     nav: [
       { text: '首页', link: '/' },
-      { text: '论文索引', link: '/papers/' },
-      { text: 'RL Post-Training', link: '/papers/#rl-post-training' },
+      { text: '论文笔记', link: '/papers/' },
+      { text: '主题调研', link: '/research/' },
       { text: '标签', link: '/tags/' },
     ],
 
