@@ -8,14 +8,9 @@ export default {
           "link": "/papers/"
         },
         {
-          "text": "RL Post-Training (1)",
+          "text": "RL Post-Training (0)",
           "collapsed": false,
-          "items": [
-            {
-              "text": "RL-100 (2026)",
-              "link": "/papers/rl-post-training/rl-100-2026"
-            }
-          ]
+          "items": []
         }
       ]
     }

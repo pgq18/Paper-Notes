@@ -1,4 +1,4 @@
 interface:
   display_name: "论文库上传"
-  short_description: "将用户确认的论文笔记或主题调研入库，校验格式并按授权发布到文献库"
-  default_prompt: "使用 $paper-library-uploader 将这份已确认的笔记或主题调研上传到当前文献库，检查格式、更新索引并验证实际发布状态。"
+  short_description: "将讨论中的关键解释与纠正融入笔记初稿，整理成最终文档并按授权上传文献库"
+  default_prompt: "使用 $paper-library-uploader 将后续讨论中的有效解释、纠正和补充融入这份笔记或主题调研，再上传到当前文献库并验证发布状态。"
