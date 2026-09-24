@@ -6,4 +6,7 @@ papers:
   - id: test-time-policy-steering
     title: Test-Time Policy Steering
     description: 围绕部署时通过价值引导、候选动作重排与策略选择改善机器人行为的论文精读。
-research: []
+research:
+  - id: long-horizon-robotics
+    title: 机器人长程任务
+    description: 围绕机器人长程任务的分层执行、子任务完成检测、技能切换与失败恢复的主题调研。

@@ -34,6 +34,17 @@ export default {
         {
           "text": "全部主题调研",
           "link": "/research/"
+        },
+        {
+          "text": "机器人长程任务 (1)",
+          "link": "/research/#long-horizon-robotics",
+          "collapsed": false,
+          "items": [
+            {
+              "text": "机器人子任务完成检测与技能切换 (2026)",
+              "link": "/research/long-horizon-robotics/robot-subtask-completion-and-skill-switching-2026"
+            }
+          ]
         }
       ]
     }

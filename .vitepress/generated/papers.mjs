@@ -41,5 +41,36 @@ export const papers = [
     "file": "papers/test-time-policy-steering/v-gps-2025.md"
   }
 ]
-export const researchCategories = []
-export const research = []
+export const researchCategories = [
+  {
+    "id": "long-horizon-robotics",
+    "title": "机器人长程任务",
+    "description": "围绕机器人长程任务的分层执行、子任务完成检测、技能切换与失败恢复的主题调研。"
+  }
+]
+export const research = [
+  {
+    "type": "research",
+    "title": "机器人长程任务中的子任务完成检测、技能终止与切换：文献调研",
+    "shortTitle": "机器人子任务完成检测与技能切换",
+    "year": 2026,
+    "date": "2026-09-24",
+    "category": "long-horizon-robotics",
+    "tags": [
+      "成功检测",
+      "技能终止",
+      "机器人长程任务",
+      "视觉语言模型",
+      "进度与奖励模型"
+    ],
+    "authors": [],
+    "paper": "",
+    "code": "",
+    "project": "",
+    "summary": "梳理学习式成功检测、策略内生终止、视觉语言验证及进度奖励模型，比较其监督来源、在线技能切换证据与跨任务泛化边界。",
+    "status": "",
+    "rating": null,
+    "route": "/research/long-horizon-robotics/robot-subtask-completion-and-skill-switching-2026",
+    "file": "research/long-horizon-robotics/robot-subtask-completion-and-skill-switching-2026.md"
+  }
+]
