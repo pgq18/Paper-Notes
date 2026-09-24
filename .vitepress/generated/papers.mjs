@@ -14,6 +14,39 @@ export const categories = [
 export const papers = [
   {
     "type": "paper",
+    "title": "VLA-RL: Towards Masterful and General Robotic Manipulation with Scalable Reinforcement Learning",
+    "shortTitle": "VLA-RL",
+    "year": 2025,
+    "date": "2026-09-25",
+    "category": "rl-post-training",
+    "tags": [
+      "PPO",
+      "VLA",
+      "在线强化学习",
+      "机器人操作",
+      "过程奖励"
+    ],
+    "authors": [
+      "Guanxing Lu",
+      "Wenkai Guo",
+      "Chubin Zhang",
+      "Yuheng Zhou",
+      "Haonan Jiang",
+      "Zifeng Gao",
+      "Yansong Tang",
+      "Ziwei Wang"
+    ],
+    "paper": "https://arxiv.org/abs/2505.18719",
+    "code": "https://github.com/GuanxingLu/vlarl",
+    "project": "",
+    "summary": "从已完成模仿微调的 OpenVLA 出发，以在线 PPO、伪过程奖励和并行训练改善 LIBERO 操作成功率，同时辨明泛化、推理扩展与实现完整性的证据边界。",
+    "status": "read",
+    "rating": null,
+    "route": "/papers/rl-post-training/vla-rl-2025",
+    "file": "papers/rl-post-training/vla-rl-2025.md"
+  },
+  {
+    "type": "paper",
     "title": "Steering Your Generalists: Improving Robotic Foundation Models via Value Guidance",
     "shortTitle": "V-GPS：用价值函数挑选机器人动作",
     "year": 2025,

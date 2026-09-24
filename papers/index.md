@@ -6,7 +6,9 @@
 
 围绕强化学习后训练的论文精读与方法分析。
 
-该分类暂时没有内容。
+| 标题 | 摘要 | 标签 | 年份 |
+| --- | --- | --- | ---: |
+| [VLA-RL](/papers/rl-post-training/vla-rl-2025) | 从已完成模仿微调的 OpenVLA 出发，以在线 PPO、伪过程奖励和并行训练改善 LIBERO 操作成功率，同时辨明泛化、推理扩展与实现完整性的证据边界。 | PPO、VLA、在线强化学习、机器人操作、过程奖励 | 2025 |
 
 ## Test-Time Policy Steering {#test-time-policy-steering}
 

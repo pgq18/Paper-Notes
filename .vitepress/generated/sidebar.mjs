@@ -8,10 +8,15 @@ export default {
           "link": "/papers/"
         },
         {
-          "text": "RL Post-Training (0)",
+          "text": "RL Post-Training (1)",
           "link": "/papers/#rl-post-training",
           "collapsed": false,
-          "items": []
+          "items": [
+            {
+              "text": "VLA-RL (2025)",
+              "link": "/papers/rl-post-training/vla-rl-2025"
+            }
+          ]
         },
         {
           "text": "Test-Time Policy Steering (1)",
