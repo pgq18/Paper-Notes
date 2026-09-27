@@ -14,10 +14,38 @@ export const categories = [
 export const papers = [
   {
     "type": "paper",
+    "title": "Steering Your Generalists: Improving Robotic Foundation Models via Value Guidance",
+    "shortTitle": "V-GPS：用价值函数挑选机器人动作",
+    "year": 2025,
+    "date": "2026-09-27",
+    "category": "test-time-policy-steering",
+    "tags": [
+      "价值函数",
+      "机器人基础模型",
+      "测试时动作选择",
+      "离线强化学习"
+    ],
+    "authors": [
+      "Mitsuhiko Nakamoto",
+      "Oier Mees",
+      "Aviral Kumar",
+      "Sergey Levine"
+    ],
+    "paper": "https://arxiv.org/abs/2410.13816",
+    "code": "https://github.com/nakamotoo/V-GPS",
+    "project": "https://nakamotoo.github.io/V-GPS/",
+    "summary": "V-GPS 用离线强化学习预训练的语言条件价值函数，在部署时重排冻结通用策略的候选动作，改善所测机器人操作任务的平均成功率。",
+    "status": "read",
+    "rating": null,
+    "route": "/papers/test-time-policy-steering/v-gps-2025",
+    "file": "papers/test-time-policy-steering/v-gps-2025.md"
+  },
+  {
+    "type": "paper",
     "title": "VLA-RL: Towards Masterful and General Robotic Manipulation with Scalable Reinforcement Learning",
     "shortTitle": "VLA-RL",
     "year": 2025,
-    "date": "2026-09-25",
+    "date": "2026-09-27",
     "category": "rl-post-training",
     "tags": [
       "PPO",
@@ -44,34 +72,6 @@ export const papers = [
     "rating": null,
     "route": "/papers/rl-post-training/vla-rl-2025",
     "file": "papers/rl-post-training/vla-rl-2025.md"
-  },
-  {
-    "type": "paper",
-    "title": "Steering Your Generalists: Improving Robotic Foundation Models via Value Guidance",
-    "shortTitle": "V-GPS：用价值函数挑选机器人动作",
-    "year": 2025,
-    "date": "2026-09-24",
-    "category": "test-time-policy-steering",
-    "tags": [
-      "价值函数",
-      "机器人基础模型",
-      "测试时动作选择",
-      "离线强化学习"
-    ],
-    "authors": [
-      "Mitsuhiko Nakamoto",
-      "Oier Mees",
-      "Aviral Kumar",
-      "Sergey Levine"
-    ],
-    "paper": "https://arxiv.org/abs/2410.13816",
-    "code": "https://github.com/nakamotoo/V-GPS",
-    "project": "https://nakamotoo.github.io/V-GPS/",
-    "summary": "V-GPS 用离线强化学习预训练的语言条件价值函数，在部署时重排冻结通用策略的候选动作，改善所测机器人操作任务的平均成功率。",
-    "status": "read",
-    "rating": null,
-    "route": "/papers/test-time-policy-steering/v-gps-2025",
-    "file": "papers/test-time-policy-steering/v-gps-2025.md"
   }
 ]
 export const researchCategories = [

@@ -3,7 +3,7 @@ type: "paper"
 title: "VLA-RL: Towards Masterful and General Robotic Manipulation with Scalable Reinforcement Learning"
 shortTitle: "VLA-RL"
 year: 2025
-date: "2026-09-25"
+date: "2026-09-27"
 category: "rl-post-training"
 tags: ["VLA", "机器人操作", "在线强化学习", "PPO", "过程奖励"]
 authors: ["Guanxing Lu", "Wenkai Guo", "Chubin Zhang", "Yuheng Zhou", "Haonan Jiang", "Zifeng Gao", "Yansong Tang", "Ziwei Wang"]
@@ -22,7 +22,7 @@ status: "read"
 
 # VLA-RL：让会模仿的机器人从自己的尝试中继续学习
 
-VLA-RL 研究怎样把预训练机器人策略变成能够继续试错、改进动作的策略。它的价值集中在自回归动作模型、在线策略优化和训练系统的衔接；最直接的证据是 OpenVLA 在 LIBERO 四个任务套件上的平均成功率由 76.5% 提高到 81.0%。
+VLA-RL 研究怎样让已经学会模仿的机器人，通过自己的试错继续提高成功率。它从完成模仿微调的 OpenVLA 出发，在仿真中反复执行任务，用 PPO 根据后续回报调整动作的生成概率。为补充稀疏的终局成败反馈，它从成功轨迹中的夹爪开合和低速关键帧提取进展标签，训练一个过程奖励模型；在线学习时固定这个模型，将其评分与环境奖励相加，让策略在任务途中也能获得反馈。
 
 ## 论文来源
 

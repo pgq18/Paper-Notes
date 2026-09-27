@@ -12,8 +12,8 @@
 
 | 标题 | 分类 | 年份 | 摘要 |
 | --- | --- | ---: | --- |
-| [VLA-RL](/papers/rl-post-training/vla-rl-2025) | RL Post-Training | 2025 | 从已完成模仿微调的 OpenVLA 出发，以在线 PPO、伪过程奖励和并行训练改善 LIBERO 操作成功率，同时辨明泛化、推理扩展与实现完整性的证据边界。 |
 | [V-GPS：用价值函数挑选机器人动作](/papers/test-time-policy-steering/v-gps-2025) | Test-Time Policy Steering | 2025 | V-GPS 用离线强化学习预训练的语言条件价值函数，在部署时重排冻结通用策略的候选动作，改善所测机器人操作任务的平均成功率。 |
+| [VLA-RL](/papers/rl-post-training/vla-rl-2025) | RL Post-Training | 2025 | 从已完成模仿微调的 OpenVLA 出发，以在线 PPO、伪过程奖励和并行训练改善 LIBERO 操作成功率，同时辨明泛化、推理扩展与实现完整性的证据边界。 |
 
 ### 分类
 
