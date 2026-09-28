@@ -8,7 +8,7 @@ export default {
           "link": "/papers/"
         },
         {
-          "text": "RL Post-Training (3)",
+          "text": "RL Post-Training (4)",
           "link": "/papers/#rl-post-training",
           "collapsed": false,
           "items": [
@@ -19,6 +19,10 @@ export default {
             {
               "text": "RL-100 (2026)",
               "link": "/papers/rl-post-training/rl-100-2026"
+            },
+            {
+              "text": "ActiveRL：主动补齐离线数据 (2025)",
+              "link": "/papers/rl-post-training/active-rl-2025"
             },
             {
               "text": "VLA-RL (2025)",

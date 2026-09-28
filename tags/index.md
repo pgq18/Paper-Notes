@@ -2,11 +2,23 @@
 
 同一标签下的内容按论文笔记与主题调研分别列出。
 
+## Active Learning {#active-learning}
+
+### 论文笔记
+
+- [ActiveRL：主动补齐离线数据](/papers/rl-post-training/active-rl-2025) (2025)：在离线数据覆盖不足且新增交互有限的条件下，以模型集成分歧选择采集起点和探索动作，并截断低不确定性轨迹，再用增广数据改善离线策略。
+
 ## embodied-reasoning {#embodied-reasoning}
 
 ### 论文笔记
 
 - [Steerable Policies](/papers/test-time-policy-steering/steerable-policies-2026) (2026)：用多粒度语言与像素坐标重标注机器人演示，训练可接受多种指令的 VLA，使高层模型能根据观察与执行反馈选择控制接口，改善真实机器人分层控制。
+
+## Exploration {#exploration}
+
+### 论文笔记
+
+- [ActiveRL：主动补齐离线数据](/papers/rl-post-training/active-rl-2025) (2025)：在离线数据覆盖不足且新增交互有限的条件下，以模型集成分歧选择采集起点和探索动作，并截断低不确定性轨迹，再用增广数据改善离线策略。
 
 ## hierarchical-control {#hierarchical-control}
 
@@ -20,6 +32,18 @@
 
 - [Steerable Policies](/papers/test-time-policy-steering/steerable-policies-2026) (2026)：用多粒度语言与像素坐标重标注机器人演示，训练可接受多种指令的 VLA，使高层模型能根据观察与执行反馈选择控制接口，改善真实机器人分层控制。
 
+## Offline RL {#offline-rl}
+
+### 论文笔记
+
+- [ActiveRL：主动补齐离线数据](/papers/rl-post-training/active-rl-2025) (2025)：在离线数据覆盖不足且新增交互有限的条件下，以模型集成分歧选择采集起点和探索动作，并截断低不确定性轨迹，再用增广数据改善离线策略。
+
+## Offline-to-Online RL {#offline-to-online-rl}
+
+### 论文笔记
+
+- [ActiveRL：主动补齐离线数据](/papers/rl-post-training/active-rl-2025) (2025)：在离线数据覆盖不足且新增交互有限的条件下，以模型集成分歧选择采集起点和探索动作，并截断低不确定性轨迹，再用增广数据改善离线策略。
+
 ## PPO {#ppo}
 
 ### 论文笔记
@@ -31,6 +55,12 @@
 ### 论文笔记
 
 - [Steerable Policies](/papers/test-time-policy-steering/steerable-policies-2026) (2026)：用多粒度语言与像素坐标重标注机器人演示，训练可接受多种指令的 VLA，使高层模型能根据观察与执行反馈选择控制接口，改善真实机器人分层控制。
+
+## Uncertainty {#uncertainty}
+
+### 论文笔记
+
+- [ActiveRL：主动补齐离线数据](/papers/rl-post-training/active-rl-2025) (2025)：在离线数据覆盖不足且新增交互有限的条件下，以模型集成分歧选择采集起点和探索动作，并截断低不确定性轨迹，再用增广数据改善离线策略。
 
 ## vision-language-action {#vision-language-action}
 

@@ -10,6 +10,7 @@
 | --- | --- | --- | ---: |
 | [SARL：通过强化学习选择机器人的语言指令](/papers/rl-post-training/sarl-2026) | SARL 固定通用机器人策略，通过在线强化学习选择状态相关的语言指令，调用和组合已有技能以适应新的多步骤任务。 | 分层控制、在线强化学习、机器人基础模型、语言动作、长程任务 | 2026 |
 | [RL-100](/papers/rl-post-training/rl-100-2026) | RL-100 从扩散模仿策略出发，通过带离线评估门控的迭代强化学习、真机数据扩充和在线微调提升操作可靠性，再用一致性蒸馏降低部署延迟。 | 一致性蒸馏、扩散策略、机器人操作、真实世界强化学习、离线到在线强化学习 | 2026 |
+| [ActiveRL：主动补齐离线数据](/papers/rl-post-training/active-rl-2025) | 在离线数据覆盖不足且新增交互有限的条件下，以模型集成分歧选择采集起点和探索动作，并截断低不确定性轨迹，再用增广数据改善离线策略。 | Active Learning、Exploration、Offline RL、Offline-to-Online RL、Uncertainty | 2025 |
 | [VLA-RL](/papers/rl-post-training/vla-rl-2025) | 从已完成模仿微调的 OpenVLA 出发，以在线 PPO、伪过程奖励和并行训练改善 LIBERO 操作成功率，同时辨明泛化、推理扩展与实现完整性的证据边界。 | PPO、VLA、在线强化学习、机器人操作、过程奖励 | 2025 |
 
 ## Test-Time Policy Steering {#test-time-policy-steering}

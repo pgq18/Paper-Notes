@@ -111,6 +111,36 @@ export const papers = [
   },
   {
     "type": "paper",
+    "title": "Active Reinforcement Learning Strategies for Offline Policy Improvement",
+    "shortTitle": "ActiveRL：主动补齐离线数据",
+    "year": 2025,
+    "date": "2026-09-28",
+    "category": "rl-post-training",
+    "tags": [
+      "Active Learning",
+      "Exploration",
+      "Offline RL",
+      "Offline-to-Online RL",
+      "Uncertainty"
+    ],
+    "authors": [
+      "Ambedkar Dukkipati",
+      "Ranga Shaarad Ayyagari",
+      "Bodhisattwa Dasgupta",
+      "Parag Dutta",
+      "Prabhas Reddy Onteru"
+    ],
+    "paper": "https://arxiv.org/html/2412.13106v2",
+    "code": "https://github.com/sml-iisc/ActiveRL",
+    "project": "https://sml.csa.iisc.ac.in/Blog/Active_RL/index.html",
+    "summary": "在离线数据覆盖不足且新增交互有限的条件下，以模型集成分歧选择采集起点和探索动作，并截断低不确定性轨迹，再用增广数据改善离线策略。",
+    "status": "read",
+    "rating": null,
+    "route": "/papers/rl-post-training/active-rl-2025",
+    "file": "papers/rl-post-training/active-rl-2025.md"
+  },
+  {
+    "type": "paper",
     "title": "Steering Your Generalists: Improving Robotic Foundation Models via Value Guidance",
     "shortTitle": "V-GPS：用价值函数挑选机器人动作",
     "year": 2025,
