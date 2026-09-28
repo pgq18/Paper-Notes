@@ -2,11 +2,41 @@
 
 同一标签下的内容按论文笔记与主题调研分别列出。
 
+## embodied-reasoning {#embodied-reasoning}
+
+### 论文笔记
+
+- [Steerable Policies](/papers/test-time-policy-steering/steerable-policies-2026) (2026)：用多粒度语言与像素坐标重标注机器人演示，训练可接受多种指令的 VLA，使高层模型能根据观察与执行反馈选择控制接口，改善真实机器人分层控制。
+
+## hierarchical-control {#hierarchical-control}
+
+### 论文笔记
+
+- [Steerable Policies](/papers/test-time-policy-steering/steerable-policies-2026) (2026)：用多粒度语言与像素坐标重标注机器人演示，训练可接受多种指令的 VLA，使高层模型能根据观察与执行反馈选择控制接口，改善真实机器人分层控制。
+
+## instruction-following {#instruction-following}
+
+### 论文笔记
+
+- [Steerable Policies](/papers/test-time-policy-steering/steerable-policies-2026) (2026)：用多粒度语言与像素坐标重标注机器人演示，训练可接受多种指令的 VLA，使高层模型能根据观察与执行反馈选择控制接口，改善真实机器人分层控制。
+
 ## PPO {#ppo}
 
 ### 论文笔记
 
 - [VLA-RL](/papers/rl-post-training/vla-rl-2025) (2025)：从已完成模仿微调的 OpenVLA 出发，以在线 PPO、伪过程奖励和并行训练改善 LIBERO 操作成功率，同时辨明泛化、推理扩展与实现完整性的证据边界。
+
+## synthetic-data {#synthetic-data}
+
+### 论文笔记
+
+- [Steerable Policies](/papers/test-time-policy-steering/steerable-policies-2026) (2026)：用多粒度语言与像素坐标重标注机器人演示，训练可接受多种指令的 VLA，使高层模型能根据观察与执行反馈选择控制接口，改善真实机器人分层控制。
+
+## vision-language-action {#vision-language-action}
+
+### 论文笔记
+
+- [Steerable Policies](/papers/test-time-policy-steering/steerable-policies-2026) (2026)：用多粒度语言与像素坐标重标注机器人演示，训练可接受多种指令的 VLA，使高层模型能根据观察与执行反馈选择控制接口，改善真实机器人分层控制。
 
 ## VLA {#vla}
 

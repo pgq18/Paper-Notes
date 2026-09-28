@@ -77,6 +77,40 @@ export const papers = [
   },
   {
     "type": "paper",
+    "title": "Steerable Vision-Language-Action Policies for Embodied Reasoning and Hierarchical Control",
+    "shortTitle": "Steerable Policies",
+    "year": 2026,
+    "date": "2026-09-28",
+    "category": "test-time-policy-steering",
+    "tags": [
+      "embodied-reasoning",
+      "hierarchical-control",
+      "instruction-following",
+      "synthetic-data",
+      "vision-language-action"
+    ],
+    "authors": [
+      "William Chen",
+      "Jagdeep Singh Bhatia",
+      "Catherine Glossop",
+      "Nikhil Mathihalli",
+      "Ria Doshi",
+      "Andy Tang",
+      "Danny Driess",
+      "Karl Pertsch",
+      "Sergey Levine"
+    ],
+    "paper": "https://arxiv.org/abs/2602.13193",
+    "code": "https://github.com/steerable-policies/steerable-policies-bridge",
+    "project": "https://steerable-policies.github.io/",
+    "summary": "用多粒度语言与像素坐标重标注机器人演示，训练可接受多种指令的 VLA，使高层模型能根据观察与执行反馈选择控制接口，改善真实机器人分层控制。",
+    "status": "read",
+    "rating": null,
+    "route": "/papers/test-time-policy-steering/steerable-policies-2026",
+    "file": "papers/test-time-policy-steering/steerable-policies-2026.md"
+  },
+  {
+    "type": "paper",
     "title": "Steering Your Generalists: Improving Robotic Foundation Models via Value Guidance",
     "shortTitle": "V-GPS：用价值函数挑选机器人动作",
     "year": 2025,

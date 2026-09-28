@@ -27,10 +27,14 @@ export default {
           ]
         },
         {
-          "text": "Test-Time Policy Steering (1)",
+          "text": "Test-Time Policy Steering (2)",
           "link": "/papers/#test-time-policy-steering",
           "collapsed": false,
           "items": [
+            {
+              "text": "Steerable Policies (2026)",
+              "link": "/papers/test-time-policy-steering/steerable-policies-2026"
+            },
             {
               "text": "V-GPS：用价值函数挑选机器人动作 (2025)",
               "link": "/papers/test-time-policy-steering/v-gps-2025"
