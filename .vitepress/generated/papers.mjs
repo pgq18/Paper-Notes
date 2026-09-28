@@ -14,6 +14,40 @@ export const categories = [
 export const papers = [
   {
     "type": "paper",
+    "title": "Performant robotic manipulation with real-world reinforcement learning",
+    "shortTitle": "RL-100",
+    "year": 2026,
+    "date": "2026-09-28",
+    "category": "rl-post-training",
+    "tags": [
+      "一致性蒸馏",
+      "扩散策略",
+      "机器人操作",
+      "真实世界强化学习",
+      "离线到在线强化学习"
+    ],
+    "authors": [
+      "Kun Lei",
+      "Huanyu Li",
+      "Dongjie Yu",
+      "Zhenyu Wei",
+      "Lingxiao Guo",
+      "Zhennan Jiang",
+      "Ziyu Wang",
+      "Shiyu Liang",
+      "Huazhe Xu"
+    ],
+    "paper": "https://arxiv.org/abs/2510.14830v4",
+    "code": "https://github.com/Lei-Kun/RL-100",
+    "project": "https://lei-kun.github.io/RL-100/",
+    "summary": "RL-100 从扩散模仿策略出发，通过带离线评估门控的迭代强化学习、真机数据扩充和在线微调提升操作可靠性，再用一致性蒸馏降低部署延迟。",
+    "status": "read",
+    "rating": null,
+    "route": "/papers/rl-post-training/rl-100-2026",
+    "file": "papers/rl-post-training/rl-100-2026.md"
+  },
+  {
+    "type": "paper",
     "title": "Steering Your Generalists: Improving Robotic Foundation Models via Value Guidance",
     "shortTitle": "V-GPS：用价值函数挑选机器人动作",
     "year": 2025,

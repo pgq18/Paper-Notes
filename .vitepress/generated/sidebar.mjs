@@ -8,10 +8,14 @@ export default {
           "link": "/papers/"
         },
         {
-          "text": "RL Post-Training (1)",
+          "text": "RL Post-Training (2)",
           "link": "/papers/#rl-post-training",
           "collapsed": false,
           "items": [
+            {
+              "text": "RL-100 (2026)",
+              "link": "/papers/rl-post-training/rl-100-2026"
+            },
             {
               "text": "VLA-RL (2025)",
               "link": "/papers/rl-post-training/vla-rl-2025"
