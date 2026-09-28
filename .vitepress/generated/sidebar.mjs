@@ -8,10 +8,14 @@ export default {
           "link": "/papers/"
         },
         {
-          "text": "RL Post-Training (2)",
+          "text": "RL Post-Training (3)",
           "link": "/papers/#rl-post-training",
           "collapsed": false,
           "items": [
+            {
+              "text": "SARL：通过强化学习选择机器人的语言指令 (2026)",
+              "link": "/papers/rl-post-training/sarl-2026"
+            },
             {
               "text": "RL-100 (2026)",
               "link": "/papers/rl-post-training/rl-100-2026"

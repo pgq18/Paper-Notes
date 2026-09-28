@@ -14,6 +14,35 @@ export const categories = [
 export const papers = [
   {
     "type": "paper",
+    "title": "Adapting Generalist Robot Policies with Semantic Reinforcement Learning",
+    "shortTitle": "SARL：通过强化学习选择机器人的语言指令",
+    "year": 2026,
+    "date": "2026-09-28",
+    "category": "rl-post-training",
+    "tags": [
+      "分层控制",
+      "在线强化学习",
+      "机器人基础模型",
+      "语言动作",
+      "长程任务"
+    ],
+    "authors": [
+      "Jagdeep Singh Bhatia",
+      "Andrew Wagenmaker",
+      "William Chen",
+      "Sergey Levine"
+    ],
+    "paper": "https://arxiv.org/abs/2606.31958",
+    "code": "",
+    "project": "https://semantic-action-rl.github.io/",
+    "summary": "SARL 固定通用机器人策略，通过在线强化学习选择状态相关的语言指令，调用和组合已有技能以适应新的多步骤任务。",
+    "status": "read",
+    "rating": null,
+    "route": "/papers/rl-post-training/sarl-2026",
+    "file": "papers/rl-post-training/sarl-2026.md"
+  },
+  {
+    "type": "paper",
     "title": "Performant robotic manipulation with real-world reinforcement learning",
     "shortTitle": "RL-100",
     "year": 2026,
