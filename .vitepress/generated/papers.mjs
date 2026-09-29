@@ -9,9 +9,45 @@ export const categories = [
     "id": "test-time-policy-steering",
     "title": "Test-Time Policy Steering",
     "description": "围绕部署时通过价值引导、候选动作重排与策略选择改善机器人行为的论文精读。"
+  },
+  {
+    "id": "real-time-vla",
+    "title": "Real-Time VLA",
+    "description": "围绕视觉语言动作策略的异步推理、动作分块、延迟补偿与执行调度的论文精读。"
   }
 ]
 export const papers = [
+  {
+    "type": "paper",
+    "title": "FutureRTC: Real-Time Robot Execution with Anticipatory-Conditioned Action Chunking",
+    "shortTitle": "FutureRTC",
+    "year": 2026,
+    "date": "2026-09-29",
+    "category": "real-time-vla",
+    "tags": [
+      "VLA",
+      "动作分块",
+      "延迟补偿",
+      "异步推理",
+      "未来视觉预测"
+    ],
+    "authors": [
+      "Hai Jiang",
+      "Yixian Zou",
+      "Binbin Liang",
+      "Boqian Liu",
+      "Fanman Meng",
+      "Shuaicheng Liu"
+    ],
+    "paper": "https://arxiv.org/abs/2607.24008v1",
+    "code": "https://github.com/JianghaiSCU/FutureRTC",
+    "project": "https://jianghaiscu.github.io/FutureRTC_proj/",
+    "summary": "利用已承诺动作预测交接时刻的视觉特征与机器人状态，让冻结的VLA从未来执行上下文生成动作，缓解异步推理的时间错位。",
+    "status": "read",
+    "rating": null,
+    "route": "/papers/real-time-vla/futurertc-2026",
+    "file": "papers/real-time-vla/futurertc-2026.md"
+  },
   {
     "type": "paper",
     "title": "Reinforcement Learning for Real-Time Vision-Language-Action Policies",

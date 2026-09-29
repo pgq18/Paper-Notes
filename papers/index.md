@@ -22,3 +22,11 @@
 | --- | --- | --- | ---: |
 | [Steerable Policies](/papers/test-time-policy-steering/steerable-policies-2026) | 用多粒度语言与像素坐标重标注机器人演示，训练可接受多种指令的 VLA，使高层模型能根据观察与执行反馈选择控制接口，改善真实机器人分层控制。 | embodied-reasoning、hierarchical-control、instruction-following、synthetic-data、vision-language-action | 2026 |
 | [V-GPS：用价值函数挑选机器人动作](/papers/test-time-policy-steering/v-gps-2025) | V-GPS 用离线强化学习预训练的语言条件价值函数，在部署时重排冻结通用策略的候选动作，改善所测机器人操作任务的平均成功率。 | 价值函数、机器人基础模型、测试时动作选择、离线强化学习 | 2025 |
+
+## Real-Time VLA {#real-time-vla}
+
+围绕视觉语言动作策略的异步推理、动作分块、延迟补偿与执行调度的论文精读。
+
+| 标题 | 摘要 | 标签 | 年份 |
+| --- | --- | --- | ---: |
+| [FutureRTC](/papers/real-time-vla/futurertc-2026) | 利用已承诺动作预测交接时刻的视觉特征与机器人状态，让冻结的VLA从未来执行上下文生成动作，缓解异步推理的时间错位。 | VLA、动作分块、延迟补偿、异步推理、未来视觉预测 | 2026 |

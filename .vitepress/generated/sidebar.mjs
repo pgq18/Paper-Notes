@@ -48,6 +48,17 @@ export default {
               "link": "/papers/test-time-policy-steering/v-gps-2025"
             }
           ]
+        },
+        {
+          "text": "Real-Time VLA (1)",
+          "link": "/papers/#real-time-vla",
+          "collapsed": false,
+          "items": [
+            {
+              "text": "FutureRTC (2026)",
+              "link": "/papers/real-time-vla/futurertc-2026"
+            }
+          ]
         }
       ]
     }
