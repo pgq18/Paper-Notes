@@ -2,11 +2,23 @@
 
 同一标签下的内容按论文笔记与主题调研分别列出。
 
+## action-chunking {#action-chunking}
+
+### 主题调研
+
+- [Chunked Policy 的块间纠正与在线适配](/research/long-horizon-robotics/chunk-boundary-physical-correction-and-online-adaptation-2026) (2026)：比较块间物理纠正、动作残差、恢复与持续控制权切换，梳理 RecoveryChaining 等近邻、训练价值差异及在线适配的证据边界。
+
 ## Active Learning {#active-learning}
 
 ### 论文笔记
 
 - [ActiveRL：主动补齐离线数据](/papers/rl-post-training/active-rl-2025) (2025)：在离线数据覆盖不足且新增交互有限的条件下，以模型集成分歧选择采集起点和探索动作，并截断低不确定性轨迹，再用增广数据改善离线策略。
+
+## adaptation {#adaptation}
+
+### 主题调研
+
+- [Chunked Policy 的块间纠正与在线适配](/research/long-horizon-robotics/chunk-boundary-physical-correction-and-online-adaptation-2026) (2026)：比较块间物理纠正、动作残差、恢复与持续控制权切换，梳理 RecoveryChaining 等近邻、训练价值差异及在线适配的证据边界。
 
 ## embodied-reasoning {#embodied-reasoning}
 
@@ -44,11 +56,41 @@
 
 - [ActiveRL：主动补齐离线数据](/papers/rl-post-training/active-rl-2025) (2025)：在离线数据覆盖不足且新增交互有限的条件下，以模型集成分歧选择采集起点和探索动作，并截断低不确定性轨迹，再用增广数据改善离线策略。
 
+## online-rl {#online-rl}
+
+### 主题调研
+
+- [Chunked Policy 的块间纠正与在线适配](/research/long-horizon-robotics/chunk-boundary-physical-correction-and-online-adaptation-2026) (2026)：比较块间物理纠正、动作残差、恢复与持续控制权切换，梳理 RecoveryChaining 等近邻、训练价值差异及在线适配的证据边界。
+
+## policy-switching {#policy-switching}
+
+### 主题调研
+
+- [Chunked Policy 的块间纠正与在线适配](/research/long-horizon-robotics/chunk-boundary-physical-correction-and-online-adaptation-2026) (2026)：比较块间物理纠正、动作残差、恢复与持续控制权切换，梳理 RecoveryChaining 等近邻、训练价值差异及在线适配的证据边界。
+
 ## PPO {#ppo}
 
 ### 论文笔记
 
 - [VLA-RL](/papers/rl-post-training/vla-rl-2025) (2025)：从已完成模仿微调的 OpenVLA 出发，以在线 PPO、伪过程奖励和并行训练改善 LIBERO 操作成功率，同时辨明泛化、推理扩展与实现完整性的证据边界。
+
+## recovery {#recovery}
+
+### 主题调研
+
+- [Chunked Policy 的块间纠正与在线适配](/research/long-horizon-robotics/chunk-boundary-physical-correction-and-online-adaptation-2026) (2026)：比较块间物理纠正、动作残差、恢复与持续控制权切换，梳理 RecoveryChaining 等近邻、训练价值差异及在线适配的证据边界。
+
+## residual-rl {#residual-rl}
+
+### 主题调研
+
+- [Chunked Policy 的块间纠正与在线适配](/research/long-horizon-robotics/chunk-boundary-physical-correction-and-online-adaptation-2026) (2026)：比较块间物理纠正、动作残差、恢复与持续控制权切换，梳理 RecoveryChaining 等近邻、训练价值差异及在线适配的证据边界。
+
+## robotics {#robotics}
+
+### 主题调研
+
+- [Chunked Policy 的块间纠正与在线适配](/research/long-horizon-robotics/chunk-boundary-physical-correction-and-online-adaptation-2026) (2026)：比较块间物理纠正、动作残差、恢复与持续控制权切换，梳理 RecoveryChaining 等近邻、训练价值差异及在线适配的证据边界。
 
 ## synthetic-data {#synthetic-data}
 

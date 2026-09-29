@@ -211,6 +211,32 @@ export const researchCategories = [
 export const research = [
   {
     "type": "research",
+    "title": "Chunked Policy 的块间物理纠正与在线适配：残差、恢复和控制权切换调研",
+    "shortTitle": "Chunked Policy 的块间纠正与在线适配",
+    "year": 2026,
+    "date": "2026-09-29",
+    "category": "long-horizon-robotics",
+    "tags": [
+      "action-chunking",
+      "adaptation",
+      "online-rl",
+      "policy-switching",
+      "recovery",
+      "residual-rl",
+      "robotics"
+    ],
+    "authors": [],
+    "paper": "",
+    "code": "",
+    "project": "",
+    "summary": "比较块间物理纠正、动作残差、恢复与持续控制权切换，梳理 RecoveryChaining 等近邻、训练价值差异及在线适配的证据边界。",
+    "status": "",
+    "rating": null,
+    "route": "/research/long-horizon-robotics/chunk-boundary-physical-correction-and-online-adaptation-2026",
+    "file": "research/long-horizon-robotics/chunk-boundary-physical-correction-and-online-adaptation-2026.md"
+  },
+  {
+    "type": "research",
     "title": "机器人长程任务中的子任务完成检测、技能终止与切换：文献调研",
     "shortTitle": "机器人子任务完成检测与技能切换",
     "year": 2026,

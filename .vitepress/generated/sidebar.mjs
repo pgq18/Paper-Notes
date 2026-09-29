@@ -57,10 +57,14 @@ export default {
           "link": "/research/"
         },
         {
-          "text": "机器人长程任务 (1)",
+          "text": "机器人长程任务 (2)",
           "link": "/research/#long-horizon-robotics",
           "collapsed": false,
           "items": [
+            {
+              "text": "Chunked Policy 的块间纠正与在线适配 (2026)",
+              "link": "/research/long-horizon-robotics/chunk-boundary-physical-correction-and-online-adaptation-2026"
+            },
             {
               "text": "机器人子任务完成检测与技能切换 (2026)",
               "link": "/research/long-horizon-robotics/robot-subtask-completion-and-skill-switching-2026"

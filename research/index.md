@@ -8,4 +8,5 @@
 
 | 标题 | 摘要 | 标签 | 年份 |
 | --- | --- | --- | ---: |
+| [Chunked Policy 的块间纠正与在线适配](/research/long-horizon-robotics/chunk-boundary-physical-correction-and-online-adaptation-2026) | 比较块间物理纠正、动作残差、恢复与持续控制权切换，梳理 RecoveryChaining 等近邻、训练价值差异及在线适配的证据边界。 | action-chunking、adaptation、online-rl、policy-switching、recovery、residual-rl、robotics | 2026 |
 | [机器人子任务完成检测与技能切换](/research/long-horizon-robotics/robot-subtask-completion-and-skill-switching-2026) | 梳理学习式成功检测、策略内生终止、视觉语言验证及进度奖励模型，比较其监督来源、在线技能切换证据与跨任务泛化边界。 | 成功检测、技能终止、机器人长程任务、视觉语言模型、进度与奖励模型 | 2026 |
