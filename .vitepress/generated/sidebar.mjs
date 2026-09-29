@@ -8,10 +8,14 @@ export default {
           "link": "/papers/"
         },
         {
-          "text": "RL Post-Training (4)",
+          "text": "RL Post-Training (5)",
           "link": "/papers/#rl-post-training",
-          "collapsed": false,
+          "collapsed": true,
           "items": [
+            {
+              "text": "Real-Time EXPO-FT (2026)",
+              "link": "/papers/rl-post-training/real-time-expo-ft-2026"
+            },
             {
               "text": "SARL：通过强化学习选择机器人的语言指令 (2026)",
               "link": "/papers/rl-post-training/sarl-2026"
@@ -68,6 +72,17 @@ export default {
             {
               "text": "机器人子任务完成检测与技能切换 (2026)",
               "link": "/research/long-horizon-robotics/robot-subtask-completion-and-skill-switching-2026"
+            }
+          ]
+        },
+        {
+          "text": "机器人实时控制 (1)",
+          "link": "/research/#real-time-control",
+          "collapsed": false,
+          "items": [
+            {
+              "text": "两阶段读取不同时刻新观测：从接口组合到可检验的研究问题 (2026)",
+              "link": "/research/real-time-control/two-observation-steering-2026"
             }
           ]
         }

@@ -14,6 +14,35 @@ export const categories = [
 export const papers = [
   {
     "type": "paper",
+    "title": "Reinforcement Learning for Real-Time Vision-Language-Action Policies",
+    "shortTitle": "Real-Time EXPO-FT",
+    "year": 2026,
+    "date": "2026-09-29",
+    "category": "rl-post-training",
+    "tags": [
+      "action-chunking",
+      "real-time-control",
+      "reinforcement-learning",
+      "residual-policy",
+      "vision-language-action"
+    ],
+    "authors": [
+      "Perry Dong",
+      "Kuo-Han Hung",
+      "Dorsa Sadigh",
+      "Chelsea Finn"
+    ],
+    "paper": "https://arxiv.org/abs/2609.18207",
+    "code": "https://github.com/pd-perry/expo-ft",
+    "project": "https://pd-perry.github.io/real-time-expo-ft/",
+    "summary": "用延迟感知的 VLA 提前生成动作候选，再在执行边界依据最新观测进行强化学习驱动的快速修正与价值筛选，提高动态任务中的成功率。",
+    "status": "read",
+    "rating": null,
+    "route": "/papers/rl-post-training/real-time-expo-ft-2026",
+    "file": "papers/rl-post-training/real-time-expo-ft-2026.md"
+  },
+  {
+    "type": "paper",
     "title": "Adapting Generalist Robot Policies with Semantic Reinforcement Learning",
     "shortTitle": "SARL：通过强化学习选择机器人的语言指令",
     "year": 2026,
@@ -206,6 +235,11 @@ export const researchCategories = [
     "id": "long-horizon-robotics",
     "title": "机器人长程任务",
     "description": "围绕机器人长程任务的分层执行、子任务完成检测、技能切换与失败恢复的主题调研。"
+  },
+  {
+    "id": "real-time-control",
+    "title": "机器人实时控制",
+    "description": "围绕生成式机器人策略的推理延迟、观测时效、异步执行与闭环反馈的主题调研。"
   }
 ]
 export const research = [
@@ -234,6 +268,30 @@ export const research = [
     "rating": null,
     "route": "/research/long-horizon-robotics/chunk-boundary-physical-correction-and-online-adaptation-2026",
     "file": "research/long-horizon-robotics/chunk-boundary-physical-correction-and-online-adaptation-2026.md"
+  },
+  {
+    "type": "research",
+    "title": "两阶段读取不同时刻新观测：从接口组合到可检验的研究问题",
+    "shortTitle": "两阶段读取不同时刻新观测：从接口组合到可检验的研究问题",
+    "year": 2026,
+    "date": "2026-09-29",
+    "category": "real-time-control",
+    "tags": [
+      "动作反馈",
+      "噪声引导",
+      "实时控制",
+      "异步推理",
+      "视觉语言动作模型"
+    ],
+    "authors": [],
+    "paper": "",
+    "code": "",
+    "project": "",
+    "summary": "围绕生成式机器人策略在去噪前与生成后读取不同时刻新观测的问题，综合噪声引导、动作残差、滚动去噪和快慢反馈文献，厘清已有方法的覆盖范围，提出以信息到达时机、执行期限和晚期可修正性为核心的研究假设与验证方案。",
+    "status": "",
+    "rating": null,
+    "route": "/research/real-time-control/two-observation-steering-2026",
+    "file": "research/real-time-control/two-observation-steering-2026.md"
   },
   {
     "type": "research",

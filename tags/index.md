@@ -4,6 +4,10 @@
 
 ## action-chunking {#action-chunking}
 
+### 论文笔记
+
+- [Real-Time EXPO-FT](/papers/rl-post-training/real-time-expo-ft-2026) (2026)：用延迟感知的 VLA 提前生成动作候选，再在执行边界依据最新观测进行强化学习驱动的快速修正与价值筛选，提高动态任务中的成功率。
+
 ### 主题调研
 
 - [Chunked Policy 的块间纠正与在线适配](/research/long-horizon-robotics/chunk-boundary-physical-correction-and-online-adaptation-2026) (2026)：比较块间物理纠正、动作残差、恢复与持续控制权切换，梳理 RecoveryChaining 等近邻、训练价值差异及在线适配的证据边界。
@@ -74,11 +78,29 @@
 
 - [VLA-RL](/papers/rl-post-training/vla-rl-2025) (2025)：从已完成模仿微调的 OpenVLA 出发，以在线 PPO、伪过程奖励和并行训练改善 LIBERO 操作成功率，同时辨明泛化、推理扩展与实现完整性的证据边界。
 
+## real-time-control {#real-time-control}
+
+### 论文笔记
+
+- [Real-Time EXPO-FT](/papers/rl-post-training/real-time-expo-ft-2026) (2026)：用延迟感知的 VLA 提前生成动作候选，再在执行边界依据最新观测进行强化学习驱动的快速修正与价值筛选，提高动态任务中的成功率。
+
 ## recovery {#recovery}
 
 ### 主题调研
 
 - [Chunked Policy 的块间纠正与在线适配](/research/long-horizon-robotics/chunk-boundary-physical-correction-and-online-adaptation-2026) (2026)：比较块间物理纠正、动作残差、恢复与持续控制权切换，梳理 RecoveryChaining 等近邻、训练价值差异及在线适配的证据边界。
+
+## reinforcement-learning {#reinforcement-learning}
+
+### 论文笔记
+
+- [Real-Time EXPO-FT](/papers/rl-post-training/real-time-expo-ft-2026) (2026)：用延迟感知的 VLA 提前生成动作候选，再在执行边界依据最新观测进行强化学习驱动的快速修正与价值筛选，提高动态任务中的成功率。
+
+## residual-policy {#residual-policy}
+
+### 论文笔记
+
+- [Real-Time EXPO-FT](/papers/rl-post-training/real-time-expo-ft-2026) (2026)：用延迟感知的 VLA 提前生成动作候选，再在执行边界依据最新观测进行强化学习驱动的快速修正与价值筛选，提高动态任务中的成功率。
 
 ## residual-rl {#residual-rl}
 
@@ -108,6 +130,7 @@
 
 ### 论文笔记
 
+- [Real-Time EXPO-FT](/papers/rl-post-training/real-time-expo-ft-2026) (2026)：用延迟感知的 VLA 提前生成动作候选，再在执行边界依据最新观测进行强化学习驱动的快速修正与价值筛选，提高动态任务中的成功率。
 - [Steerable Policies](/papers/test-time-policy-steering/steerable-policies-2026) (2026)：用多粒度语言与像素坐标重标注机器人演示，训练可接受多种指令的 VLA，使高层模型能根据观察与执行反馈选择控制接口，改善真实机器人分层控制。
 
 ## VLA {#vla}
@@ -134,12 +157,36 @@
 
 - [SARL：通过强化学习选择机器人的语言指令](/papers/rl-post-training/sarl-2026) (2026)：SARL 固定通用机器人策略，通过在线强化学习选择状态相关的语言指令，调用和组合已有技能以适应新的多步骤任务。
 
+## 动作反馈 {#动作反馈}
+
+### 主题调研
+
+- [两阶段读取不同时刻新观测：从接口组合到可检验的研究问题](/research/real-time-control/two-observation-steering-2026) (2026)：围绕生成式机器人策略在去噪前与生成后读取不同时刻新观测的问题，综合噪声引导、动作残差、滚动去噪和快慢反馈文献，厘清已有方法的覆盖范围，提出以信息到达时机、执行期限和晚期可修正性为核心的研究假设与验证方案。
+
+## 噪声引导 {#噪声引导}
+
+### 主题调研
+
+- [两阶段读取不同时刻新观测：从接口组合到可检验的研究问题](/research/real-time-control/two-observation-steering-2026) (2026)：围绕生成式机器人策略在去噪前与生成后读取不同时刻新观测的问题，综合噪声引导、动作残差、滚动去噪和快慢反馈文献，厘清已有方法的覆盖范围，提出以信息到达时机、执行期限和晚期可修正性为核心的研究假设与验证方案。
+
 ## 在线强化学习 {#在线强化学习}
 
 ### 论文笔记
 
 - [SARL：通过强化学习选择机器人的语言指令](/papers/rl-post-training/sarl-2026) (2026)：SARL 固定通用机器人策略，通过在线强化学习选择状态相关的语言指令，调用和组合已有技能以适应新的多步骤任务。
 - [VLA-RL](/papers/rl-post-training/vla-rl-2025) (2025)：从已完成模仿微调的 OpenVLA 出发，以在线 PPO、伪过程奖励和并行训练改善 LIBERO 操作成功率，同时辨明泛化、推理扩展与实现完整性的证据边界。
+
+## 实时控制 {#实时控制}
+
+### 主题调研
+
+- [两阶段读取不同时刻新观测：从接口组合到可检验的研究问题](/research/real-time-control/two-observation-steering-2026) (2026)：围绕生成式机器人策略在去噪前与生成后读取不同时刻新观测的问题，综合噪声引导、动作残差、滚动去噪和快慢反馈文献，厘清已有方法的覆盖范围，提出以信息到达时机、执行期限和晚期可修正性为核心的研究假设与验证方案。
+
+## 异步推理 {#异步推理}
+
+### 主题调研
+
+- [两阶段读取不同时刻新观测：从接口组合到可检验的研究问题](/research/real-time-control/two-observation-steering-2026) (2026)：围绕生成式机器人策略在去噪前与生成后读取不同时刻新观测的问题，综合噪声引导、动作残差、滚动去噪和快慢反馈文献，厘清已有方法的覆盖范围，提出以信息到达时机、执行期限和晚期可修正性为核心的研究假设与验证方案。
 
 ## 成功检测 {#成功检测}
 
@@ -190,6 +237,12 @@
 ### 论文笔记
 
 - [RL-100](/papers/rl-post-training/rl-100-2026) (2026)：RL-100 从扩散模仿策略出发，通过带离线评估门控的迭代强化学习、真机数据扩充和在线微调提升操作可靠性，再用一致性蒸馏降低部署延迟。
+
+## 视觉语言动作模型 {#视觉语言动作模型}
+
+### 主题调研
+
+- [两阶段读取不同时刻新观测：从接口组合到可检验的研究问题](/research/real-time-control/two-observation-steering-2026) (2026)：围绕生成式机器人策略在去噪前与生成后读取不同时刻新观测的问题，综合噪声引导、动作残差、滚动去噪和快慢反馈文献，厘清已有方法的覆盖范围，提出以信息到达时机、执行期限和晚期可修正性为核心的研究假设与验证方案。
 
 ## 视觉语言模型 {#视觉语言模型}
 

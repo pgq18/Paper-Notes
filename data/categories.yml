@@ -10,3 +10,6 @@ research:
   - id: long-horizon-robotics
     title: 机器人长程任务
     description: 围绕机器人长程任务的分层执行、子任务完成检测、技能切换与失败恢复的主题调研。
+  - id: real-time-control
+    title: 机器人实时控制
+    description: 围绕生成式机器人策略的推理延迟、观测时效、异步执行与闭环反馈的主题调研。
