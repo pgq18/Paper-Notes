@@ -96,6 +96,17 @@ export default {
               "link": "/research/real-time-control/two-observation-steering-2026"
             }
           ]
+        },
+        {
+          "text": "机器人在线强化学习 (1)",
+          "link": "/research/#robot-online-rl",
+          "collapsed": false,
+          "items": [
+            {
+              "text": "真机在线 RL 的缺口识别与定向探索 (2026)",
+              "link": "/research/robot-online-rl/active-gap-real-robot-rl-2026"
+            }
+          ]
         }
       ]
     }

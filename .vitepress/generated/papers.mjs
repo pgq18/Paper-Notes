@@ -276,9 +276,38 @@ export const researchCategories = [
     "id": "real-time-control",
     "title": "机器人实时控制",
     "description": "围绕生成式机器人策略的推理延迟、观测时效、异步执行与闭环反馈的主题调研。"
+  },
+  {
+    "id": "robot-online-rl",
+    "title": "机器人在线强化学习",
+    "description": "围绕真实机器人在线与离线到在线强化学习的主动探索、练习调度、反馈与自主复位的主题调研。"
   }
 ]
 export const research = [
+  {
+    "type": "research",
+    "title": "机械臂真机在线强化学习中的缺口识别与定向补充探索",
+    "shortTitle": "真机在线 RL 的缺口识别与定向探索",
+    "year": 2026,
+    "date": "2026-10-06",
+    "category": "robot-online-rl",
+    "tags": [
+      "主动探索",
+      "机器人强化学习",
+      "离线到在线强化学习",
+      "练习调度",
+      "自主复位"
+    ],
+    "authors": [],
+    "paper": "",
+    "code": "",
+    "project": "",
+    "summary": "比较机械臂真机在线学习中基于不确定性、成功率、访问覆盖与学习收益的主动采集机制，梳理缺口诊断、到达复位、策略更新和实机证据，并深入解释 TwinRL 的孪生诊断与 DBAP 的任务图规划。",
+    "status": "",
+    "rating": null,
+    "route": "/research/robot-online-rl/active-gap-real-robot-rl-2026",
+    "file": "research/robot-online-rl/active-gap-real-robot-rl-2026.md"
+  },
   {
     "type": "research",
     "title": "Chunked Policy 的块间物理纠正与在线适配：残差、恢复和控制权切换调研",

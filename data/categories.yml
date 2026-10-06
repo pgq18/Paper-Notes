@@ -16,3 +16,6 @@ research:
   - id: real-time-control
     title: 机器人实时控制
     description: 围绕生成式机器人策略的推理延迟、观测时效、异步执行与闭环反馈的主题调研。
+  - id: robot-online-rl
+    title: 机器人在线强化学习
+    description: 围绕真实机器人在线与离线到在线强化学习的主动探索、练习调度、反馈与自主复位的主题调研。
