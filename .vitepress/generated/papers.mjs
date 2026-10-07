@@ -65,6 +65,36 @@ export const papers = [
   },
   {
     "type": "paper",
+    "title": "SmoothRL: Online Reinforcement Learning During Asynchronous Execution",
+    "shortTitle": "SmoothRL",
+    "year": 2026,
+    "date": "2026-10-07",
+    "category": "rl-post-training",
+    "tags": [
+      "VLA",
+      "人在回路",
+      "动作分块",
+      "异步推理",
+      "机器人强化学习",
+      "残差策略"
+    ],
+    "authors": [
+      "Guang Gao",
+      "Yuxuan Nong",
+      "Baifu Huang",
+      "Jianan Wang"
+    ],
+    "paper": "https://arxiv.org/abs/2608.29768v1",
+    "code": "",
+    "project": "https://www.astribot.com/en/AI/SmoothRL/",
+    "summary": "将异步动作块划分为已承诺、实际执行和丢弃区域，使价值梯度只更新实际执行的动作，并结合前缀条件化和平滑约束完成真机在线强化学习。",
+    "status": "read",
+    "rating": null,
+    "route": "/papers/rl-post-training/smoothrl-2026",
+    "file": "papers/rl-post-training/smoothrl-2026.md"
+  },
+  {
+    "type": "paper",
     "title": "FutureRTC: Real-Time Robot Execution with Anticipatory-Conditioned Action Chunking",
     "shortTitle": "FutureRTC",
     "year": 2026,

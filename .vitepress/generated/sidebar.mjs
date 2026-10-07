@@ -8,13 +8,17 @@ export default {
           "link": "/papers/"
         },
         {
-          "text": "RL Post-Training (6)",
+          "text": "RL Post-Training (7)",
           "link": "/papers/#rl-post-training",
           "collapsed": true,
           "items": [
             {
               "text": "ARLI (2026)",
               "link": "/papers/rl-post-training/arli-2026"
+            },
+            {
+              "text": "SmoothRL (2026)",
+              "link": "/papers/rl-post-training/smoothrl-2026"
             },
             {
               "text": "Real-Time EXPO-FT (2026)",
