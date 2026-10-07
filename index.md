@@ -2,7 +2,7 @@
 
 个人研究文献库。论文笔记帮助理解单篇工作的研究逻辑，主题调研围绕一个问题串联多篇文献，两者分别归档与分类。
 
-- [论文笔记](/papers/)：8 篇。围绕单篇论文理解研究问题、方法和实验。
+- [论文笔记](/papers/)：9 篇。围绕单篇论文理解研究问题、方法和实验。
 - [主题调研](/research/)：4 篇。围绕一个研究问题综合多篇文献，梳理路线、证据和未解问题。
 - [标签索引](/tags/)：按共同主题查阅两个轨道的内容。
 
@@ -12,17 +12,17 @@
 
 | 标题 | 分类 | 年份 | 摘要 |
 | --- | --- | ---: | --- |
+| [ARLI](/papers/rl-post-training/arli-2026) | RL Post-Training | 2026 | ARLI 将推理期间已承诺的动作和中途新观测交给轻量噪声策略，使冻结的生成式机器人策略能够在异步推理延迟下通过强化学习改善行为。 |
 | [FutureRTC](/papers/real-time-vla/futurertc-2026) | Real-Time VLA | 2026 | 利用已承诺动作预测交接时刻的视觉特征与机器人状态，让冻结的VLA从未来执行上下文生成动作，缓解异步推理的时间错位。 |
 | [Real-Time EXPO-FT](/papers/rl-post-training/real-time-expo-ft-2026) | RL Post-Training | 2026 | 用延迟感知的 VLA 提前生成动作候选，再在执行边界依据最新观测进行强化学习驱动的快速修正与价值筛选，提高动态任务中的成功率。 |
 | [SARL：通过强化学习选择机器人的语言指令](/papers/rl-post-training/sarl-2026) | RL Post-Training | 2026 | SARL 固定通用机器人策略，通过在线强化学习选择状态相关的语言指令，调用和组合已有技能以适应新的多步骤任务。 |
 | [RL-100](/papers/rl-post-training/rl-100-2026) | RL Post-Training | 2026 | RL-100 从扩散模仿策略出发，通过带离线评估门控的迭代强化学习、真机数据扩充和在线微调提升操作可靠性，再用一致性蒸馏降低部署延迟。 |
-| [Steerable Policies](/papers/test-time-policy-steering/steerable-policies-2026) | Test-Time Policy Steering | 2026 | 用多粒度语言与像素坐标重标注机器人演示，训练可接受多种指令的 VLA，使高层模型能根据观察与执行反馈选择控制接口，改善真实机器人分层控制。 |
 
 ### 分类
 
 | 分类 | 篇数 | 范围 |
 | --- | ---: | --- |
-| [RL Post-Training](/papers/#rl-post-training) | 5 | 围绕强化学习后训练的论文精读与方法分析。 |
+| [RL Post-Training](/papers/#rl-post-training) | 6 | 围绕强化学习后训练的论文精读与方法分析。 |
 | [Test-Time Policy Steering](/papers/#test-time-policy-steering) | 2 | 围绕部署时通过价值引导、候选动作重排与策略选择改善机器人行为的论文精读。 |
 | [Real-Time VLA](/papers/#real-time-vla) | 1 | 围绕视觉语言动作策略的异步推理、动作分块、延迟补偿与执行调度的论文精读。 |
 
