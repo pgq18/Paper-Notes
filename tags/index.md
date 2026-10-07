@@ -148,7 +148,17 @@
 
 - [RL-100](/papers/rl-post-training/rl-100-2026) (2026)：RL-100 从扩散模仿策略出发，通过带离线评估门控的迭代强化学习、真机数据扩充和在线微调提升操作可靠性，再用一致性蒸馏降低部署延迟。
 
+## 不确定性估计 {#不确定性估计}
+
+### 论文笔记
+
+- [Uncertainty-driven Grasp Learning](/papers/rl-post-training/uncertainty-driven-grasp-learning-2024) (2024)：在离线初始化的像素抓取网络上分解模型与数据不确定性，用模型知识缺口引导真机试抓和在线更新，改善陌生困难物体的箱内吸取。
+
 ## 主动探索 {#主动探索}
+
+### 论文笔记
+
+- [Uncertainty-driven Grasp Learning](/papers/rl-post-training/uncertainty-driven-grasp-learning-2024) (2024)：在离线初始化的像素抓取网络上分解模型与数据不确定性，用模型知识缺口引导真机试抓和在线更新，改善陌生困难物体的箱内吸取。
 
 ### 主题调研
 
@@ -185,6 +195,12 @@
 ### 主题调研
 
 - [两阶段读取不同时刻新观测：从接口组合到可检验的研究问题](/research/real-time-control/two-observation-steering-2026) (2026)：围绕生成式机器人策略在去噪前与生成后读取不同时刻新观测的问题，综合噪声引导、动作残差、滚动去噪和快慢反馈文献，厘清已有方法的覆盖范围，提出以信息到达时机、执行期限和晚期可修正性为核心的研究假设与验证方案。
+
+## 吸附抓取 {#吸附抓取}
+
+### 论文笔记
+
+- [Uncertainty-driven Grasp Learning](/papers/rl-post-training/uncertainty-driven-grasp-learning-2024) (2024)：在离线初始化的像素抓取网络上分解模型与数据不确定性，用模型知识缺口引导真机试抓和在线更新，改善陌生困难物体的箱内吸取。
 
 ## 噪声引导 {#噪声引导}
 
@@ -277,6 +293,12 @@
 
 - [真机在线 RL 的缺口识别与定向探索](/research/robot-online-rl/active-gap-real-robot-rl-2026) (2026)：比较机械臂真机在线学习中基于不确定性、成功率、访问覆盖与学习收益的主动采集机制，梳理缺口诊断、到达复位、策略更新和实机证据，并深入解释 TwinRL 的孪生诊断与 DBAP 的任务图规划。
 
+## 机器人抓取 {#机器人抓取}
+
+### 论文笔记
+
+- [Uncertainty-driven Grasp Learning](/papers/rl-post-training/uncertainty-driven-grasp-learning-2024) (2024)：在离线初始化的像素抓取网络上分解模型与数据不确定性，用模型知识缺口引导真机试抓和在线更新，改善陌生困难物体的箱内吸取。
+
 ## 机器人操作 {#机器人操作}
 
 ### 论文笔记
@@ -325,6 +347,7 @@
 ### 论文笔记
 
 - [RL-100](/papers/rl-post-training/rl-100-2026) (2026)：RL-100 从扩散模仿策略出发，通过带离线评估门控的迭代强化学习、真机数据扩充和在线微调提升操作可靠性，再用一致性蒸馏降低部署延迟。
+- [Uncertainty-driven Grasp Learning](/papers/rl-post-training/uncertainty-driven-grasp-learning-2024) (2024)：在离线初始化的像素抓取网络上分解模型与数据不确定性，用模型知识缺口引导真机试抓和在线更新，改善陌生困难物体的箱内吸取。
 
 ### 主题调研
 

@@ -95,6 +95,38 @@ export const papers = [
   },
   {
     "type": "paper",
+    "title": "Uncertainty-driven Exploration Strategies for Online Grasp Learning",
+    "shortTitle": "Uncertainty-driven Grasp Learning",
+    "year": 2024,
+    "date": "2026-10-07",
+    "category": "rl-post-training",
+    "tags": [
+      "不确定性估计",
+      "主动探索",
+      "吸附抓取",
+      "机器人抓取",
+      "离线到在线强化学习"
+    ],
+    "authors": [
+      "Yitian Shi",
+      "Philipp Schillinger",
+      "Miroslav Gabriel",
+      "Alexander Qualmann",
+      "Zohar Feldman",
+      "Hanna Ziesche",
+      "Ngo Anh Vien"
+    ],
+    "paper": "https://arxiv.org/abs/2309.12038v2",
+    "code": "",
+    "project": "",
+    "summary": "在离线初始化的像素抓取网络上分解模型与数据不确定性，用模型知识缺口引导真机试抓和在线更新，改善陌生困难物体的箱内吸取。",
+    "status": "read",
+    "rating": null,
+    "route": "/papers/rl-post-training/uncertainty-driven-grasp-learning-2024",
+    "file": "papers/rl-post-training/uncertainty-driven-grasp-learning-2024.md"
+  },
+  {
+    "type": "paper",
     "title": "FutureRTC: Real-Time Robot Execution with Anticipatory-Conditioned Action Chunking",
     "shortTitle": "FutureRTC",
     "year": 2026,

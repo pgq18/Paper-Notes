@@ -8,7 +8,7 @@ export default {
           "link": "/papers/"
         },
         {
-          "text": "RL Post-Training (7)",
+          "text": "RL Post-Training (8)",
           "link": "/papers/#rl-post-training",
           "collapsed": true,
           "items": [
@@ -19,6 +19,10 @@ export default {
             {
               "text": "SmoothRL (2026)",
               "link": "/papers/rl-post-training/smoothrl-2026"
+            },
+            {
+              "text": "Uncertainty-driven Grasp Learning (2024)",
+              "link": "/papers/rl-post-training/uncertainty-driven-grasp-learning-2024"
             },
             {
               "text": "Real-Time EXPO-FT (2026)",

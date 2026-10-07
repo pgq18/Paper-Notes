@@ -2,7 +2,7 @@
 
 个人研究文献库。论文笔记帮助理解单篇工作的研究逻辑，主题调研围绕一个问题串联多篇文献，两者分别归档与分类。
 
-- [论文笔记](/papers/)：10 篇。围绕单篇论文理解研究问题、方法和实验。
+- [论文笔记](/papers/)：11 篇。围绕单篇论文理解研究问题、方法和实验。
 - [主题调研](/research/)：4 篇。围绕一个研究问题综合多篇文献，梳理路线、证据和未解问题。
 - [标签索引](/tags/)：按共同主题查阅两个轨道的内容。
 
@@ -14,15 +14,15 @@
 | --- | --- | ---: | --- |
 | [ARLI](/papers/rl-post-training/arli-2026) | RL Post-Training | 2026 | ARLI 将推理期间已承诺的动作和中途新观测交给轻量噪声策略，使冻结的生成式机器人策略能够在异步推理延迟下通过强化学习改善行为。 |
 | [SmoothRL](/papers/rl-post-training/smoothrl-2026) | RL Post-Training | 2026 | 将异步动作块划分为已承诺、实际执行和丢弃区域，使价值梯度只更新实际执行的动作，并结合前缀条件化和平滑约束完成真机在线强化学习。 |
+| [Uncertainty-driven Grasp Learning](/papers/rl-post-training/uncertainty-driven-grasp-learning-2024) | RL Post-Training | 2024 | 在离线初始化的像素抓取网络上分解模型与数据不确定性，用模型知识缺口引导真机试抓和在线更新，改善陌生困难物体的箱内吸取。 |
 | [FutureRTC](/papers/real-time-vla/futurertc-2026) | Real-Time VLA | 2026 | 利用已承诺动作预测交接时刻的视觉特征与机器人状态，让冻结的VLA从未来执行上下文生成动作，缓解异步推理的时间错位。 |
 | [Real-Time EXPO-FT](/papers/rl-post-training/real-time-expo-ft-2026) | RL Post-Training | 2026 | 用延迟感知的 VLA 提前生成动作候选，再在执行边界依据最新观测进行强化学习驱动的快速修正与价值筛选，提高动态任务中的成功率。 |
-| [SARL：通过强化学习选择机器人的语言指令](/papers/rl-post-training/sarl-2026) | RL Post-Training | 2026 | SARL 固定通用机器人策略，通过在线强化学习选择状态相关的语言指令，调用和组合已有技能以适应新的多步骤任务。 |
 
 ### 分类
 
 | 分类 | 篇数 | 范围 |
 | --- | ---: | --- |
-| [RL Post-Training](/papers/#rl-post-training) | 7 | 围绕强化学习后训练的论文精读与方法分析。 |
+| [RL Post-Training](/papers/#rl-post-training) | 8 | 围绕强化学习后训练的论文精读与方法分析。 |
 | [Test-Time Policy Steering](/papers/#test-time-policy-steering) | 2 | 围绕部署时通过价值引导、候选动作重排与策略选择改善机器人行为的论文精读。 |
 | [Real-Time VLA](/papers/#real-time-vla) | 1 | 围绕视觉语言动作策略的异步推理、动作分块、延迟补偿与执行调度的论文精读。 |
 
