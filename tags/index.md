@@ -176,11 +176,23 @@
 
 - [V-GPS：用价值函数挑选机器人动作](/papers/test-time-policy-steering/v-gps-2025) (2025)：V-GPS 用离线强化学习预训练的语言条件价值函数，在部署时重排冻结通用策略的候选动作，改善所测机器人操作任务的平均成功率。
 
+## 关键状态 {#关键状态}
+
+### 论文笔记
+
+- [Critical States：把探索放在合适的位置](/papers/rl-exploration/identifying-critical-states-2020) (2020)：用同一状态下不同动作的 Q 值方差识别决策关键点，并在这些位置偏向利用，以减少关键失误、改善后续状态的探索。
+
 ## 分层控制 {#分层控制}
 
 ### 论文笔记
 
 - [SARL：通过强化学习选择机器人的语言指令](/papers/rl-post-training/sarl-2026) (2026)：SARL 固定通用机器人策略，通过在线强化学习选择状态相关的语言指令，调用和组合已有技能以适应新的多步骤任务。
+
+## 动作价值 {#动作价值}
+
+### 论文笔记
+
+- [Critical States：把探索放在合适的位置](/papers/rl-exploration/identifying-critical-states-2020) (2020)：用同一状态下不同动作的 Q 值方差识别决策关键点，并在这些位置偏向利用，以减少关键失误、改善后续状态的探索。
 
 ## 动作分块 {#动作分块}
 
@@ -251,6 +263,7 @@
 ### 论文笔记
 
 - [ARLI](/papers/rl-post-training/arli-2026) (2026)：ARLI 将推理期间已承诺的动作和中途新观测交给轻量噪声策略，使冻结的生成式机器人策略能够在异步推理延迟下通过强化学习改善行为。
+- [Critical States：把探索放在合适的位置](/papers/rl-exploration/identifying-critical-states-2020) (2020)：用同一状态下不同动作的 Q 值方差识别决策关键点，并在这些位置偏向利用，以减少关键失误、改善后续状态的探索。
 
 ## 成功检测 {#成功检测}
 
@@ -269,6 +282,12 @@
 ### 主题调研
 
 - [机器人子任务完成检测与技能切换](/research/long-horizon-robotics/robot-subtask-completion-and-skill-switching-2026) (2026)：梳理学习式成功检测、策略内生终止、视觉语言验证及进度奖励模型，比较其监督来源、在线技能切换证据与跨任务泛化边界。
+
+## 探索与利用 {#探索与利用}
+
+### 论文笔记
+
+- [Critical States：把探索放在合适的位置](/papers/rl-exploration/identifying-critical-states-2020) (2020)：用同一状态下不同动作的 Q 值方差识别决策关键点，并在这些位置偏向利用，以减少关键失误、改善后续状态的探索。
 
 ## 未来视觉预测 {#未来视觉预测}
 
@@ -358,6 +377,12 @@
 ### 论文笔记
 
 - [V-GPS：用价值函数挑选机器人动作](/papers/test-time-policy-steering/v-gps-2025) (2025)：V-GPS 用离线强化学习预训练的语言条件价值函数，在部署时重排冻结通用策略的候选动作，改善所测机器人操作任务的平均成功率。
+
+## 策略解释 {#策略解释}
+
+### 论文笔记
+
+- [Critical States：把探索放在合适的位置](/papers/rl-exploration/identifying-critical-states-2020) (2020)：用同一状态下不同动作的 Q 值方差识别决策关键点，并在这些位置偏向利用，以减少关键失误、改善后续状态的探索。
 
 ## 练习调度 {#练习调度}
 

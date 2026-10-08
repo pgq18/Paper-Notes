@@ -9,6 +9,9 @@ papers:
   - id: real-time-vla
     title: Real-Time VLA
     description: 围绕视觉语言动作策略的异步推理、动作分块、延迟补偿与执行调度的论文精读。
+  - id: rl-exploration
+    title: RL Exploration
+    description: 围绕强化学习中的探索与利用、关键决策状态及探索策略的论文精读。
 research:
   - id: long-horizon-robotics
     title: 机器人长程任务

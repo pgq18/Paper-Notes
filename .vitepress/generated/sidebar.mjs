@@ -71,6 +71,17 @@ export default {
               "link": "/papers/real-time-vla/futurertc-2026"
             }
           ]
+        },
+        {
+          "text": "RL Exploration (1)",
+          "link": "/papers/#rl-exploration",
+          "collapsed": false,
+          "items": [
+            {
+              "text": "Critical States：把探索放在合适的位置 (2020)",
+              "link": "/papers/rl-exploration/identifying-critical-states-2020"
+            }
+          ]
         }
       ]
     }

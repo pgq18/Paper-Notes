@@ -14,9 +14,42 @@ export const categories = [
     "id": "real-time-vla",
     "title": "Real-Time VLA",
     "description": "围绕视觉语言动作策略的异步推理、动作分块、延迟补偿与执行调度的论文精读。"
+  },
+  {
+    "id": "rl-exploration",
+    "title": "RL Exploration",
+    "description": "围绕强化学习中的探索与利用、关键决策状态及探索策略的论文精读。"
   }
 ]
 export const papers = [
+  {
+    "type": "paper",
+    "title": "Identifying Critical States by the Action-Based Variance of Expected Return",
+    "shortTitle": "Critical States：把探索放在合适的位置",
+    "year": 2020,
+    "date": "2026-10-08",
+    "category": "rl-exploration",
+    "tags": [
+      "关键状态",
+      "动作价值",
+      "强化学习",
+      "探索与利用",
+      "策略解释"
+    ],
+    "authors": [
+      "Izumi Karino",
+      "Yoshiyuki Ohmura",
+      "Yasuo Kuniyoshi"
+    ],
+    "paper": "https://arxiv.org/abs/2008.11332v2",
+    "code": "",
+    "project": "",
+    "summary": "用同一状态下不同动作的 Q 值方差识别决策关键点，并在这些位置偏向利用，以减少关键失误、改善后续状态的探索。",
+    "status": "read",
+    "rating": null,
+    "route": "/papers/rl-exploration/identifying-critical-states-2020",
+    "file": "papers/rl-exploration/identifying-critical-states-2020.md"
+  },
   {
     "type": "paper",
     "title": "Learning to Act While Waiting: RL Finetuning of Generalist Robot Policies Under Inference Latency",
