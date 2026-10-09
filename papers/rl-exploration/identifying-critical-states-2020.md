@@ -3,7 +3,7 @@ type: "paper"
 title: "Identifying Critical States by the Action-Based Variance of Expected Return"
 shortTitle: "Critical States：把探索放在合适的位置"
 year: 2020
-date: "2026-10-08"
+date: "2026-10-09"
 category: "rl-exploration"
 tags: ["强化学习", "探索与利用", "关键状态", "动作价值", "策略解释"]
 authors: ["Izumi Karino", "Yoshiyuki Ohmura", "Yasuo Kuniyoshi"]
@@ -115,7 +115,17 @@ $$
 \widehat{\mathrm{SI}}(s)=\frac1m\sum_{i=1}^{m}(\hat Q(s,a_i)-\bar Q(s))^2.
 $$
 
-Walker2d 的连续动作实验则均匀采样 1,000 个动作来近似计算方差。这些动作用于评估 Q，并非真的在环境中各执行一次，但会增加计算量。[P0，§3.2](https://arxiv.org/html/2008.11332v2#S3.SS2)
+Walker2d 的连续动作实验则均匀采样 1,000 个动作来近似计算方差。结合作者用均匀分布考察所有动作后果的定义，应理解为在**环境允许的整个有界动作空间**内采样；论文未提出围绕当前策略输出的动作另外截取一个局部区间。[P0，§2.2](https://arxiv.org/html/2008.11332v2#S2.SS2)、[§3.2](https://arxiv.org/html/2008.11332v2#S3.SS2)
+
+以同期标准 OpenAI Gym Walker2d 为例，一个动作包含六个关节控制分量，每个分量范围为 $[-1,1]$，所以动作空间为 $\mathcal A=[-1,1]^6$。采样可写成：
+
+$$
+a^{(i)}\sim\operatorname{Uniform}([-1,1]^6),\qquad i=1,\ldots,1000.
+$$
+
+每次采到的是一个完整的六维动作向量，例如 $a^{(1)}=(0.2,-0.8,0.5,0.1,-0.3,0.9)$，六个分量共同构成当前一步的控制指令。动作边界可由同期 Gym 0.17.2 的环境定义核对；原文未注明具体 Gym 版本，这里用标准环境说明采样含义。[P8，环境定义](https://github.com/openai/gym/blob/0.17.2/gym/envs/mujoco/assets/walker2d.xml)
+
+这里的“整个空间”描述采样分布的覆盖范围；1,000 个样本只用于蒙特卡洛近似，无法穷尽连续空间。固定当前状态 $s$，分别计算这批动作的 $\hat Q(s,a^{(i)})$，再将它们代入上面的均值和方差公式，把 $m$ 换成 1,000。这些动作用于评估 Q，并非真的在环境中各执行一次，但会增加计算量。
 
 ### 4.2 排名后改变动作选择
 
@@ -158,6 +168,16 @@ $$
 与此同时，其他状态的随机分支概率升到 $(0.2-0.005)/0.9\approx21.67\%$，在关键状态访问占比等于 $q$ 的条件下，整体仍为 $0.1\times0.05+0.9\times0.2167\approx0.2$。可靠通过窄桥后，轨迹才有机会覆盖桥后的新状态；这就是局部增加利用可能改善整体探索的机制。
 
 ## 5. 实验：问题、关键数据与结论
+
+实验同时覆盖离散与连续动作空间：
+
+| 任务 | 动作空间 | SI 的计算方式 |
+| --- | --- | --- |
+| Cliff Maze | 离散：上、下、左、右四个动作 | 枚举四个动作的 Q 值并计算方差 |
+| Atari Breakout | 离散：有限个游戏控制动作 | 枚举各动作的 Q 值并计算方差 |
+| Walker2d | 连续：多个关节的控制量组成动作向量 | 均匀采样 1,000 个动作向量，近似计算 Q 值方差 |
+
+来源：[P0，§3.1–3.2](https://arxiv.org/html/2008.11332v2#S3)。动作空间的区别主要改变 SI 的计算方式：有限动作可以枚举，连续动作使用采样近似。
 
 ### 能否更快学会通过危险通道？
 
@@ -226,3 +246,4 @@ $$
 - **P5**：Chidvilas Karpenahalli Ramakrishna、Adithya Mohan、Zahra Zeinaly、Lenz Belzner. *The Evolution of Criticality in Deep Reinforcement Learning*. ICAART 2025，Vol. 3，217–224。[出版方全文](https://www.scitepress.org/publishedPapers/2025/131142/pdf/index.html)。
 - **P6**：Tamilselvan Balasuntharam、Heidar Davoudi、Mehran Ebrahimi. *Preferential Proximal Policy Optimization*. ICMLA 2023。[作者实验室 PDF](https://imaginglab.ca/data/Preferential_Proximal_Policy_Optimization.pdf)。用于重要性驱动更新的后续比较。
 - **P7**：Hao Liu、Mingchen Zhuge、Bing Li、Yuhui Wang、Francesco Faccio、Bernard Ghanem、Jürgen Schmidhuber. *Learning to Identify Critical States for Reinforcement Learning from Videos*. ICCV 2023。[全文](https://arxiv.org/html/2308.07795v1)。
+- **P8**：OpenAI Gym 0.17.2 官方源码。[Walker2d 环境定义](https://github.com/openai/gym/blob/0.17.2/gym/envs/mujoco/assets/walker2d.xml)给出六个控制分量及各自的上下界；[MuJoCo 环境基类](https://github.com/openai/gym/blob/0.17.2/gym/envs/mujoco/mujoco_env.py)据此构造动作空间。用于说明同期标准环境的动作范围。

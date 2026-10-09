@@ -27,7 +27,7 @@ export const papers = [
     "title": "Identifying Critical States by the Action-Based Variance of Expected Return",
     "shortTitle": "Critical States：把探索放在合适的位置",
     "year": 2020,
-    "date": "2026-10-08",
+    "date": "2026-10-09",
     "category": "rl-exploration",
     "tags": [
       "关键状态",
