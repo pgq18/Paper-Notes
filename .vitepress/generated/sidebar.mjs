@@ -13,6 +13,10 @@ export default {
           "collapsed": true,
           "items": [
             {
+              "text": "VLA-RL (2025)",
+              "link": "/papers/rl-post-training/vla-rl-2025"
+            },
+            {
               "text": "ARLI (2026)",
               "link": "/papers/rl-post-training/arli-2026"
             },
@@ -39,10 +43,6 @@ export default {
             {
               "text": "ActiveRL：主动补齐离线数据 (2025)",
               "link": "/papers/rl-post-training/active-rl-2025"
-            },
-            {
-              "text": "VLA-RL (2025)",
-              "link": "/papers/rl-post-training/vla-rl-2025"
             }
           ]
         },

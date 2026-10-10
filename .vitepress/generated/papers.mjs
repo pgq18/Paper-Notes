@@ -24,6 +24,39 @@ export const categories = [
 export const papers = [
   {
     "type": "paper",
+    "title": "VLA-RL: Towards Masterful and General Robotic Manipulation with Scalable Reinforcement Learning",
+    "shortTitle": "VLA-RL",
+    "year": 2025,
+    "date": "2026-10-10",
+    "category": "rl-post-training",
+    "tags": [
+      "PPO",
+      "VLA",
+      "在线强化学习",
+      "机器人操作",
+      "过程奖励"
+    ],
+    "authors": [
+      "Guanxing Lu",
+      "Wenkai Guo",
+      "Chubin Zhang",
+      "Yuheng Zhou",
+      "Haonan Jiang",
+      "Zifeng Gao",
+      "Yansong Tang",
+      "Ziwei Wang"
+    ],
+    "paper": "https://arxiv.org/abs/2505.18719",
+    "code": "https://github.com/GuanxingLu/vlarl",
+    "project": "",
+    "summary": "从已完成模仿微调的 OpenVLA 出发，以在线 PPO、伪过程奖励和并行训练改善 LIBERO 操作成功率，同时辨明泛化、推理扩展与实现完整性的证据边界。",
+    "status": "read",
+    "rating": null,
+    "route": "/papers/rl-post-training/vla-rl-2025",
+    "file": "papers/rl-post-training/vla-rl-2025.md"
+  },
+  {
+    "type": "paper",
     "title": "Identifying Critical States by the Action-Based Variance of Expected Return",
     "shortTitle": "Critical States：把探索放在合适的位置",
     "year": 2020,
@@ -372,39 +405,6 @@ export const papers = [
     "rating": null,
     "route": "/papers/test-time-policy-steering/v-gps-2025",
     "file": "papers/test-time-policy-steering/v-gps-2025.md"
-  },
-  {
-    "type": "paper",
-    "title": "VLA-RL: Towards Masterful and General Robotic Manipulation with Scalable Reinforcement Learning",
-    "shortTitle": "VLA-RL",
-    "year": 2025,
-    "date": "2026-09-27",
-    "category": "rl-post-training",
-    "tags": [
-      "PPO",
-      "VLA",
-      "在线强化学习",
-      "机器人操作",
-      "过程奖励"
-    ],
-    "authors": [
-      "Guanxing Lu",
-      "Wenkai Guo",
-      "Chubin Zhang",
-      "Yuheng Zhou",
-      "Haonan Jiang",
-      "Zifeng Gao",
-      "Yansong Tang",
-      "Ziwei Wang"
-    ],
-    "paper": "https://arxiv.org/abs/2505.18719",
-    "code": "https://github.com/GuanxingLu/vlarl",
-    "project": "",
-    "summary": "从已完成模仿微调的 OpenVLA 出发，以在线 PPO、伪过程奖励和并行训练改善 LIBERO 操作成功率，同时辨明泛化、推理扩展与实现完整性的证据边界。",
-    "status": "read",
-    "rating": null,
-    "route": "/papers/rl-post-training/vla-rl-2025",
-    "file": "papers/rl-post-training/vla-rl-2025.md"
   }
 ]
 export const researchCategories = [

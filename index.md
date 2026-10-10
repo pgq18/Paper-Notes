@@ -12,11 +12,11 @@
 
 | 标题 | 分类 | 年份 | 摘要 |
 | --- | --- | ---: | --- |
+| [VLA-RL](/papers/rl-post-training/vla-rl-2025) | RL Post-Training | 2025 | 从已完成模仿微调的 OpenVLA 出发，以在线 PPO、伪过程奖励和并行训练改善 LIBERO 操作成功率，同时辨明泛化、推理扩展与实现完整性的证据边界。 |
 | [Critical States：把探索放在合适的位置](/papers/rl-exploration/identifying-critical-states-2020) | RL Exploration | 2020 | 用同一状态下不同动作的 Q 值方差识别决策关键点，并在这些位置偏向利用，以减少关键失误、改善后续状态的探索。 |
 | [ARLI](/papers/rl-post-training/arli-2026) | RL Post-Training | 2026 | ARLI 将推理期间已承诺的动作和中途新观测交给轻量噪声策略，使冻结的生成式机器人策略能够在异步推理延迟下通过强化学习改善行为。 |
 | [SmoothRL](/papers/rl-post-training/smoothrl-2026) | RL Post-Training | 2026 | 将异步动作块划分为已承诺、实际执行和丢弃区域，使价值梯度只更新实际执行的动作，并结合前缀条件化和平滑约束完成真机在线强化学习。 |
 | [Uncertainty-driven Grasp Learning](/papers/rl-post-training/uncertainty-driven-grasp-learning-2024) | RL Post-Training | 2024 | 在离线初始化的像素抓取网络上分解模型与数据不确定性，用模型知识缺口引导真机试抓和在线更新，改善陌生困难物体的箱内吸取。 |
-| [FutureRTC](/papers/real-time-vla/futurertc-2026) | Real-Time VLA | 2026 | 利用已承诺动作预测交接时刻的视觉特征与机器人状态，让冻结的VLA从未来执行上下文生成动作，缓解异步推理的时间错位。 |
 
 ### 分类
 

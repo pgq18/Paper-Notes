@@ -8,6 +8,7 @@
 
 | 标题 | 摘要 | 标签 | 年份 |
 | --- | --- | --- | ---: |
+| [VLA-RL](/papers/rl-post-training/vla-rl-2025) | 从已完成模仿微调的 OpenVLA 出发，以在线 PPO、伪过程奖励和并行训练改善 LIBERO 操作成功率，同时辨明泛化、推理扩展与实现完整性的证据边界。 | PPO、VLA、在线强化学习、机器人操作、过程奖励 | 2025 |
 | [ARLI](/papers/rl-post-training/arli-2026) | ARLI 将推理期间已承诺的动作和中途新观测交给轻量噪声策略，使冻结的生成式机器人策略能够在异步推理延迟下通过强化学习改善行为。 | VLA、动作分块、噪声空间引导、延迟补偿、异步推理、强化学习 | 2026 |
 | [SmoothRL](/papers/rl-post-training/smoothrl-2026) | 将异步动作块划分为已承诺、实际执行和丢弃区域，使价值梯度只更新实际执行的动作，并结合前缀条件化和平滑约束完成真机在线强化学习。 | VLA、人在回路、动作分块、异步推理、机器人强化学习、残差策略 | 2026 |
 | [Uncertainty-driven Grasp Learning](/papers/rl-post-training/uncertainty-driven-grasp-learning-2024) | 在离线初始化的像素抓取网络上分解模型与数据不确定性，用模型知识缺口引导真机试抓和在线更新，改善陌生困难物体的箱内吸取。 | 不确定性估计、主动探索、吸附抓取、机器人抓取、离线到在线强化学习 | 2024 |
@@ -15,7 +16,6 @@
 | [SARL：通过强化学习选择机器人的语言指令](/papers/rl-post-training/sarl-2026) | SARL 固定通用机器人策略，通过在线强化学习选择状态相关的语言指令，调用和组合已有技能以适应新的多步骤任务。 | 分层控制、在线强化学习、机器人基础模型、语言动作、长程任务 | 2026 |
 | [RL-100](/papers/rl-post-training/rl-100-2026) | RL-100 从扩散模仿策略出发，通过带离线评估门控的迭代强化学习、真机数据扩充和在线微调提升操作可靠性，再用一致性蒸馏降低部署延迟。 | 一致性蒸馏、扩散策略、机器人操作、真实世界强化学习、离线到在线强化学习 | 2026 |
 | [ActiveRL：主动补齐离线数据](/papers/rl-post-training/active-rl-2025) | 在离线数据覆盖不足且新增交互有限的条件下，以模型集成分歧选择采集起点和探索动作，并截断低不确定性轨迹，再用增广数据改善离线策略。 | Active Learning、Exploration、Offline RL、Offline-to-Online RL、Uncertainty | 2025 |
-| [VLA-RL](/papers/rl-post-training/vla-rl-2025) | 从已完成模仿微调的 OpenVLA 出发，以在线 PPO、伪过程奖励和并行训练改善 LIBERO 操作成功率，同时辨明泛化、推理扩展与实现完整性的证据边界。 | PPO、VLA、在线强化学习、机器人操作、过程奖励 | 2025 |
 
 ## Test-Time Policy Steering {#test-time-policy-steering}
 
