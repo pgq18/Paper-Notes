@@ -8,6 +8,7 @@
 
 | 标题 | 摘要 | 标签 | 年份 |
 | --- | --- | --- | ---: |
+| [TwinRL](/papers/rl-post-training/twinrl-2026) | 利用数字孪生扩展示范覆盖、提供交互回放并选择真机练习配置，提高四项桌面操作任务中的VLA在线强化学习效率。 | Digital Twin、Exploration、Human-in-the-Loop、Real-World RL、Sim-to-Real、VLA | 2026 |
 | [VLA-RL](/papers/rl-post-training/vla-rl-2025) | 从已完成模仿微调的 OpenVLA 出发，以在线 PPO、伪过程奖励和并行训练改善 LIBERO 操作成功率，同时辨明泛化、推理扩展与实现完整性的证据边界。 | PPO、VLA、在线强化学习、机器人操作、过程奖励 | 2025 |
 | [ARLI](/papers/rl-post-training/arli-2026) | ARLI 将推理期间已承诺的动作和中途新观测交给轻量噪声策略，使冻结的生成式机器人策略能够在异步推理延迟下通过强化学习改善行为。 | VLA、动作分块、噪声空间引导、延迟补偿、异步推理、强化学习 | 2026 |
 | [SmoothRL](/papers/rl-post-training/smoothrl-2026) | 将异步动作块划分为已承诺、实际执行和丢弃区域，使价值梯度只更新实际执行的动作，并结合前缀条件化和平滑约束完成真机在线强化学习。 | VLA、人在回路、动作分块、异步推理、机器人强化学习、残差策略 | 2026 |

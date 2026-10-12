@@ -24,6 +24,12 @@
 
 - [Chunked Policy 的块间纠正与在线适配](/research/long-horizon-robotics/chunk-boundary-physical-correction-and-online-adaptation-2026) (2026)：比较块间物理纠正、动作残差、恢复与持续控制权切换，梳理 RecoveryChaining 等近邻、训练价值差异及在线适配的证据边界。
 
+## Digital Twin {#digital-twin}
+
+### 论文笔记
+
+- [TwinRL](/papers/rl-post-training/twinrl-2026) (2026)：利用数字孪生扩展示范覆盖、提供交互回放并选择真机练习配置，提高四项桌面操作任务中的VLA在线强化学习效率。
+
 ## embodied-reasoning {#embodied-reasoning}
 
 ### 论文笔记
@@ -34,6 +40,7 @@
 
 ### 论文笔记
 
+- [TwinRL](/papers/rl-post-training/twinrl-2026) (2026)：利用数字孪生扩展示范覆盖、提供交互回放并选择真机练习配置，提高四项桌面操作任务中的VLA在线强化学习效率。
 - [ActiveRL：主动补齐离线数据](/papers/rl-post-training/active-rl-2025) (2025)：在离线数据覆盖不足且新增交互有限的条件下，以模型集成分歧选择采集起点和探索动作，并截断低不确定性轨迹，再用增广数据改善离线策略。
 
 ## hierarchical-control {#hierarchical-control}
@@ -41,6 +48,12 @@
 ### 论文笔记
 
 - [Steerable Policies](/papers/test-time-policy-steering/steerable-policies-2026) (2026)：用多粒度语言与像素坐标重标注机器人演示，训练可接受多种指令的 VLA，使高层模型能根据观察与执行反馈选择控制接口，改善真实机器人分层控制。
+
+## Human-in-the-Loop {#human-in-the-loop}
+
+### 论文笔记
+
+- [TwinRL](/papers/rl-post-training/twinrl-2026) (2026)：利用数字孪生扩展示范覆盖、提供交互回放并选择真机练习配置，提高四项桌面操作任务中的VLA在线强化学习效率。
 
 ## instruction-following {#instruction-following}
 
@@ -84,6 +97,12 @@
 
 - [Real-Time EXPO-FT](/papers/rl-post-training/real-time-expo-ft-2026) (2026)：用延迟感知的 VLA 提前生成动作候选，再在执行边界依据最新观测进行强化学习驱动的快速修正与价值筛选，提高动态任务中的成功率。
 
+## Real-World RL {#real-world-rl}
+
+### 论文笔记
+
+- [TwinRL](/papers/rl-post-training/twinrl-2026) (2026)：利用数字孪生扩展示范覆盖、提供交互回放并选择真机练习配置，提高四项桌面操作任务中的VLA在线强化学习效率。
+
 ## recovery {#recovery}
 
 ### 主题调研
@@ -114,6 +133,12 @@
 
 - [Chunked Policy 的块间纠正与在线适配](/research/long-horizon-robotics/chunk-boundary-physical-correction-and-online-adaptation-2026) (2026)：比较块间物理纠正、动作残差、恢复与持续控制权切换，梳理 RecoveryChaining 等近邻、训练价值差异及在线适配的证据边界。
 
+## Sim-to-Real {#sim-to-real}
+
+### 论文笔记
+
+- [TwinRL](/papers/rl-post-training/twinrl-2026) (2026)：利用数字孪生扩展示范覆盖、提供交互回放并选择真机练习配置，提高四项桌面操作任务中的VLA在线强化学习效率。
+
 ## synthetic-data {#synthetic-data}
 
 ### 论文笔记
@@ -140,6 +165,7 @@
 - [FutureRTC](/papers/real-time-vla/futurertc-2026) (2026)：利用已承诺动作预测交接时刻的视觉特征与机器人状态，让冻结的VLA从未来执行上下文生成动作，缓解异步推理的时间错位。
 - [ARLI](/papers/rl-post-training/arli-2026) (2026)：ARLI 将推理期间已承诺的动作和中途新观测交给轻量噪声策略，使冻结的生成式机器人策略能够在异步推理延迟下通过强化学习改善行为。
 - [SmoothRL](/papers/rl-post-training/smoothrl-2026) (2026)：将异步动作块划分为已承诺、实际执行和丢弃区域，使价值梯度只更新实际执行的动作，并结合前缀条件化和平滑约束完成真机在线强化学习。
+- [TwinRL](/papers/rl-post-training/twinrl-2026) (2026)：利用数字孪生扩展示范覆盖、提供交互回放并选择真机练习配置，提高四项桌面操作任务中的VLA在线强化学习效率。
 - [VLA-RL](/papers/rl-post-training/vla-rl-2025) (2025)：从已完成模仿微调的 OpenVLA 出发，以在线 PPO、伪过程奖励和并行训练改善 LIBERO 操作成功率，同时辨明泛化、推理扩展与实现完整性的证据边界。
 
 ## 一致性蒸馏 {#一致性蒸馏}

@@ -24,6 +24,46 @@ export const categories = [
 export const papers = [
   {
     "type": "paper",
+    "title": "TwinRL: Digital Twin-Driven Reinforcement Learning for Real-World Robotic Manipulation",
+    "shortTitle": "TwinRL",
+    "year": 2026,
+    "date": "2026-10-12",
+    "category": "rl-post-training",
+    "tags": [
+      "Digital Twin",
+      "Exploration",
+      "Human-in-the-Loop",
+      "Real-World RL",
+      "Sim-to-Real",
+      "VLA"
+    ],
+    "authors": [
+      "Qinwen Xu",
+      "Jiaming Liu",
+      "Rui Zhou",
+      "Shaojun Shi",
+      "Nuowei Han",
+      "Zhuoyang Liu",
+      "Chenyang Gu",
+      "Shuo Gu",
+      "Yang Yue",
+      "Gao Huang",
+      "Wenzhao Zheng",
+      "Sirui Han",
+      "Peng Jia",
+      "Shanghang Zhang"
+    ],
+    "paper": "https://arxiv.org/abs/2602.09023",
+    "code": "https://github.com/zhourui9813/TwinRL",
+    "project": "https://twinrl.github.io/",
+    "summary": "利用数字孪生扩展示范覆盖、提供交互回放并选择真机练习配置，提高四项桌面操作任务中的VLA在线强化学习效率。",
+    "status": "read",
+    "rating": null,
+    "route": "/papers/rl-post-training/twinrl-2026",
+    "file": "papers/rl-post-training/twinrl-2026.md"
+  },
+  {
+    "type": "paper",
     "title": "VLA-RL: Towards Masterful and General Robotic Manipulation with Scalable Reinforcement Learning",
     "shortTitle": "VLA-RL",
     "year": 2025,
