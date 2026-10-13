@@ -12,6 +12,9 @@ papers:
   - id: rl-exploration
     title: RL Exploration
     description: 围绕强化学习中的探索与利用、关键决策状态及探索策略的论文精读。
+  - id: continual-rl
+    title: 持续强化学习
+    description: 围绕持续强化学习中的知识保留、经验管理与任务适应的论文精读。
 research:
   - id: long-horizon-robotics
     title: 机器人长程任务

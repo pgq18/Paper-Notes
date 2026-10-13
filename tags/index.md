@@ -24,6 +24,12 @@
 
 - [Chunked Policy 的块间纠正与在线适配](/research/long-horizon-robotics/chunk-boundary-physical-correction-and-online-adaptation-2026) (2026)：比较块间物理纠正、动作残差、恢复与持续控制权切换，梳理 RecoveryChaining 等近邻、训练价值差异及在线适配的证据边界。
 
+## Continual Reinforcement Learning {#continual-reinforcement-learning}
+
+### 论文笔记
+
+- [UBER：用计划失准筛选经验](/papers/continual-rl/uncertainty-based-experience-replay-2025) (2025)：根据真实状态纠正后的未来奖励分布偏差，筛选经验并触发重规划；积累足够新数据后更新动力学模型，减少重复存储与计算。
+
 ## Digital Twin {#digital-twin}
 
 ### 论文笔记
@@ -35,6 +41,12 @@
 ### 论文笔记
 
 - [Steerable Policies](/papers/test-time-policy-steering/steerable-policies-2026) (2026)：用多粒度语言与像素坐标重标注机器人演示，训练可接受多种指令的 VLA，使高层模型能根据观察与执行反馈选择控制接口，改善真实机器人分层控制。
+
+## Experience Replay {#experience-replay}
+
+### 论文笔记
+
+- [UBER：用计划失准筛选经验](/papers/continual-rl/uncertainty-based-experience-replay-2025) (2025)：根据真实状态纠正后的未来奖励分布偏差，筛选经验并触发重规划；积累足够新数据后更新动力学模型，减少重复存储与计算。
 
 ## Exploration {#exploration}
 
@@ -60,6 +72,18 @@
 ### 论文笔记
 
 - [Steerable Policies](/papers/test-time-policy-steering/steerable-policies-2026) (2026)：用多粒度语言与像素坐标重标注机器人演示，训练可接受多种指令的 VLA，使高层模型能根据观察与执行反馈选择控制接口，改善真实机器人分层控制。
+
+## Model Predictive Control {#model-predictive-control}
+
+### 论文笔记
+
+- [UBER：用计划失准筛选经验](/papers/continual-rl/uncertainty-based-experience-replay-2025) (2025)：根据真实状态纠正后的未来奖励分布偏差，筛选经验并触发重规划；积累足够新数据后更新动力学模型，减少重复存储与计算。
+
+## Model-Based RL {#model-based-rl}
+
+### 论文笔记
+
+- [UBER：用计划失准筛选经验](/papers/continual-rl/uncertainty-based-experience-replay-2025) (2025)：根据真实状态纠正后的未来奖励分布偏差，筛选经验并触发重规划；积累足够新数据后更新动力学模型，减少重复存储与计算。
 
 ## Offline RL {#offline-rl}
 
@@ -150,6 +174,7 @@
 ### 论文笔记
 
 - [ActiveRL：主动补齐离线数据](/papers/rl-post-training/active-rl-2025) (2025)：在离线数据覆盖不足且新增交互有限的条件下，以模型集成分歧选择采集起点和探索动作，并截断低不确定性轨迹，再用增广数据改善离线策略。
+- [UBER：用计划失准筛选经验](/papers/continual-rl/uncertainty-based-experience-replay-2025) (2025)：根据真实状态纠正后的未来奖励分布偏差，筛选经验并触发重规划；积累足够新数据后更新动力学模型，减少重复存储与计算。
 
 ## vision-language-action {#vision-language-action}
 

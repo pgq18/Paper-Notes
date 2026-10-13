@@ -42,3 +42,11 @@
 | 标题 | 摘要 | 标签 | 年份 |
 | --- | --- | --- | ---: |
 | [Critical States：把探索放在合适的位置](/papers/rl-exploration/identifying-critical-states-2020) | 用同一状态下不同动作的 Q 值方差识别决策关键点，并在这些位置偏向利用，以减少关键失误、改善后续状态的探索。 | 关键状态、动作价值、强化学习、探索与利用、策略解释 | 2020 |
+
+## 持续强化学习 {#continual-rl}
+
+围绕持续强化学习中的知识保留、经验管理与任务适应的论文精读。
+
+| 标题 | 摘要 | 标签 | 年份 |
+| --- | --- | --- | ---: |
+| [UBER：用计划失准筛选经验](/papers/continual-rl/uncertainty-based-experience-replay-2025) | 根据真实状态纠正后的未来奖励分布偏差，筛选经验并触发重规划；积累足够新数据后更新动力学模型，减少重复存储与计算。 | Continual Reinforcement Learning、Experience Replay、Model Predictive Control、Model-Based RL、Uncertainty | 2025 |

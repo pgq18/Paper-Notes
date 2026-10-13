@@ -86,6 +86,17 @@ export default {
               "link": "/papers/rl-exploration/identifying-critical-states-2020"
             }
           ]
+        },
+        {
+          "text": "持续强化学习 (1)",
+          "link": "/papers/#continual-rl",
+          "collapsed": false,
+          "items": [
+            {
+              "text": "UBER：用计划失准筛选经验 (2025)",
+              "link": "/papers/continual-rl/uncertainty-based-experience-replay-2025"
+            }
+          ]
         }
       ]
     }

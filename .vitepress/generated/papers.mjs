@@ -19,9 +19,43 @@ export const categories = [
     "id": "rl-exploration",
     "title": "RL Exploration",
     "description": "围绕强化学习中的探索与利用、关键决策状态及探索策略的论文精读。"
+  },
+  {
+    "id": "continual-rl",
+    "title": "持续强化学习",
+    "description": "围绕持续强化学习中的知识保留、经验管理与任务适应的论文精读。"
   }
 ]
 export const papers = [
+  {
+    "type": "paper",
+    "title": "Uncertainty-Based Experience Replay for Task-Agnostic Continual Reinforcement Learning",
+    "shortTitle": "UBER：用计划失准筛选经验",
+    "year": 2025,
+    "date": "2026-10-13",
+    "category": "continual-rl",
+    "tags": [
+      "Continual Reinforcement Learning",
+      "Experience Replay",
+      "Model Predictive Control",
+      "Model-Based RL",
+      "Uncertainty"
+    ],
+    "authors": [
+      "Adrian Remonda",
+      "Cole Terrell",
+      "Eduardo Veas",
+      "Marc Masana"
+    ],
+    "paper": "https://openreview.net/forum?id=WxHTSPS2pi",
+    "code": "",
+    "project": "",
+    "summary": "根据真实状态纠正后的未来奖励分布偏差，筛选经验并触发重规划；积累足够新数据后更新动力学模型，减少重复存储与计算。",
+    "status": "read",
+    "rating": null,
+    "route": "/papers/continual-rl/uncertainty-based-experience-replay-2025",
+    "file": "papers/continual-rl/uncertainty-based-experience-replay-2025.md"
+  },
   {
     "type": "paper",
     "title": "TwinRL: Digital Twin-Driven Reinforcement Learning for Real-World Robotic Manipulation",
