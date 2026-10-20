@@ -29,6 +29,38 @@ export const categories = [
 export const papers = [
   {
     "type": "paper",
+    "title": "PolicyTrim: Boosting Intrinsic Policy Efficiency of Vision-Language-Action Models",
+    "shortTitle": "PolicyTrim",
+    "year": 2026,
+    "date": "2026-10-20",
+    "category": "rl-post-training",
+    "tags": [
+      "VLA",
+      "动作分块",
+      "强化学习后训练",
+      "机器人操作",
+      "策略效率"
+    ],
+    "authors": [
+      "Xianghui Wang",
+      "Feng Chen",
+      "Wenbo Zhang",
+      "Hua Yan",
+      "Zixuan Wang",
+      "Changsheng Li",
+      "Yinjie Lei"
+    ],
+    "paper": "https://arxiv.org/abs/2606.22540",
+    "code": "https://github.com/INCEPTIONwang/PolicyTrim",
+    "project": "https://inceptionwang.github.io/PolicyTrim/",
+    "summary": "通过两阶段强化学习扩展 VLA 的可靠动作执行窗口，并奖励稳定的短步数成功轨迹，降低完成操作任务所需的推理调用与物理动作开销。",
+    "status": "read",
+    "rating": null,
+    "route": "/papers/rl-post-training/policytrim-2026",
+    "file": "papers/rl-post-training/policytrim-2026.md"
+  },
+  {
+    "type": "paper",
     "title": "Uncertainty-Based Experience Replay for Task-Agnostic Continual Reinforcement Learning",
     "shortTitle": "UBER：用计划失准筛选经验",
     "year": 2025,
@@ -499,6 +531,31 @@ export const researchCategories = [
   }
 ]
 export const research = [
+  {
+    "type": "research",
+    "title": "动作分块策略何时重新规划：自适应执行窗口与闭环验证",
+    "shortTitle": "自适应执行窗口与闭环验证",
+    "year": 2026,
+    "date": "2026-10-20",
+    "category": "real-time-control",
+    "tags": [
+      "VLA",
+      "动作分块",
+      "强化学习",
+      "机器人实时控制",
+      "自适应执行窗口",
+      "闭环验证"
+    ],
+    "authors": [],
+    "paper": "",
+    "code": "",
+    "project": "",
+    "summary": "比较动作块起点选择执行长度与执行期间利用新观测触发重规划两类接口，梳理强化学习、可靠性代理和未来后果验证路线，并界定局部重规划收益学习相对现有工作的差异。",
+    "status": "",
+    "rating": null,
+    "route": "/research/real-time-control/adaptive-action-execution-2026",
+    "file": "research/real-time-control/adaptive-action-execution-2026.md"
+  },
   {
     "type": "research",
     "title": "机械臂真机在线强化学习中的缺口识别与定向补充探索",

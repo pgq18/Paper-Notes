@@ -8,10 +8,14 @@ export default {
           "link": "/papers/"
         },
         {
-          "text": "RL Post-Training (9)",
+          "text": "RL Post-Training (10)",
           "link": "/papers/#rl-post-training",
           "collapsed": true,
           "items": [
+            {
+              "text": "PolicyTrim (2026)",
+              "link": "/papers/rl-post-training/policytrim-2026"
+            },
             {
               "text": "TwinRL (2026)",
               "link": "/papers/rl-post-training/twinrl-2026"
@@ -125,10 +129,14 @@ export default {
           ]
         },
         {
-          "text": "机器人实时控制 (1)",
+          "text": "机器人实时控制 (2)",
           "link": "/research/#real-time-control",
           "collapsed": false,
           "items": [
+            {
+              "text": "自适应执行窗口与闭环验证 (2026)",
+              "link": "/research/real-time-control/adaptive-action-execution-2026"
+            },
             {
               "text": "两阶段读取不同时刻新观测：从接口组合到可检验的研究问题 (2026)",
               "link": "/research/real-time-control/two-observation-steering-2026"
